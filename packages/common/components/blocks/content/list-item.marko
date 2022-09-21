@@ -1,0 +1,173 @@
+import { get, getAsArray } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import { URLSearchParams } from "url";
+
+$ const { content, urlParams, ctaLinkStyle } = input;
+
+$ const withImage = defaultValue(input.withImage, true);
+$ const imagePosition = defaultValue(input.imagePosition, 'right');
+$ const withSection = defaultValue(input.withSection, false);
+$ const continueReading = defaultValue(input.continueReading, false);
+
+$ const imgStyles = {
+  "border": 0,
+  "outline": "none",
+  "text-decoration": "none",
+  "display": "block",
+  "height": "auto !important",
+  "max-width": "100% !important",
+};
+
+$ const imgLinkStyles = {
+  "font-family": "'Roboto', arial, sans-serif",
+  "border": 0,
+  "outline": "none",
+  "text-decoration": "none",
+};
+
+$ const tagStyle = {
+  "font-family": "'Roboto', arial, sans-serif",
+  "font-size": "14px",
+  "line-height": "19px",
+  "color": "#257478",
+  "text-transform": "uppercase",
+};
+
+$ const sponsoredTagStyle = {
+  ...tagStyle,
+  "color": "#a91b20",
+};
+
+$ const linkLabel = input.storyLocation ? `story|${input.storyLocation}|${content.name}` : input.linkLabel;
+
+<tr>
+  <td align="center" valign="top">
+    <table role="presentation" width="610" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap003">
+
+      $ const labels = getAsArray(content, "labels");
+      <if(labels.includes("Sponsored"))>
+        $ const tag = (content.company) ? `Sponsored Content by ${get(content, "company.name")}` : "Sponsored Content";
+        <tr>
+          <td align="left" valign="top" style=sponsoredTagStyle>${tag}</td>
+        </tr>
+      </if>
+      <else-if(withSection)>
+        <tr>
+          <td align="left" valign="top" style=tagStyle>${get(content, "primarySection.name")}</td>
+        </tr>
+      </else-if>
+
+      <common-table-spacer-element height="6" />
+
+      <if(withImage && imagePosition === 'top' && content.primaryImage)>
+        <common-table-spacer-element height="6" />
+        <tr>
+          <td align="center" valign="top">
+            <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+              <marko-newsletter-imgix
+                src=image.src
+                alt=image.alt
+                options={ w: 1220, h: 610, fit: "crop", auto: "format,compress" }
+                class="img_resize1"
+                attrs={ border: 0, width: 610, align: "center", vspace: 5, style: imgStyles }
+              >
+                <@link href=content.siteContext.url target="_blank" attrs={ style: imgLinkStyles, linklabel: linkLabel } />
+              </marko-newsletter-imgix>
+            </marko-core-obj-value>
+          </td>
+        </tr>
+        <common-table-spacer-element height="10" />
+      </if>
+
+      <if(withImage && imagePosition === 'right' && content.primaryImage)>
+        <tr>
+          <td align="center" valign="top" dir="ltr">
+            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top">
+                  <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" class="pad" style="padding: 0 30px 0px 0;">
+                    <tr>
+                      <td align="left" valign="top">
+                        <a style="font-family: 'Roboto', arial, sans-serif;font-size: 24px;line-height: 28px;color: #202022;font-weight: 700;text-decoration: none;" class="font1" href=content.siteContext.url linklabel=linkLabel>
+                          $!{content.name}
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" class="hide_on_mobile">
+                          <common-table-spacer-element height="5" />
+                          <tr>
+                            <td align="left" valign="top" style="font-family: 'Roboto', arial, sans-serif;font-size: 17px;line-height: 23px;color: #202022;font-weight: 400;">
+                              $!{content.teaser}
+                            </td>
+                          </tr>
+                          <if(continueReading === true)>
+                            <common-table-spacer-element height="9" />
+                            $ const linkText = content.linkText || undefined;
+                            <common-cta-element link-style=ctaLinkStyle link-text=linkText link-url=content.siteContext.url link-label=linkLabel />
+                          </if>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td align="right" valign="top" width="200" class="wdt">
+                  <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                    <marko-newsletter-imgix
+                      src=image.src
+                      alt=image.alt
+                      options={ w: 400, h: 266, fit: "crop", auto: "format,compress" }
+                      class="img_resize2"
+                      attrs={ border: 0, width: 200, height: 133, style: imgStyles }
+                    >
+                      <@link href=content.siteContext.url target="_blank" attrs={ style: imgLinkStyles, linklabel: linkLabel  } />
+                    </marko-newsletter-imgix>
+                  </marko-core-obj-value>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align="left" valign="top" class="show_on_mobile" style="display: none;mso-hide: all;">
+            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="mso-hide: all;">
+              <common-table-spacer-element height="10" />
+              <tr>
+                <td align="left" valign="top" style="font-family: 'Roboto', arial, sans-serif;font-size: 17px;line-height: 23px;color: #202022;font-weight: 400;">
+                  $!{content.teaser}
+                </td>
+              </tr>
+              <if(continueReading === true)>
+                <common-table-spacer-element height="9" />
+                $ const linkText = content.linkText || undefined;
+                <common-cta-element link-style=ctaLinkStyle link-text=linkText link-url=content.siteContext.url link-label=linkLabel />
+              </if>
+            </table>
+          </td>
+        </tr>
+      </if>
+      <else>
+        <tr>
+          <td align="left" valign="top">
+            <a style="font-family: 'Roboto', arial, sans-serif;font-size: 24px;line-height: 28px;color: #202022;font-weight: 700;text-decoration: none;" href=content.siteContext.url linklabel=linkLabel>
+              $!{content.name}
+            </a>
+          </td>
+        </tr>
+        <common-table-spacer-element height="5" />
+        <tr>
+          <td align="left" valign="middle" style="font-family: 'Roboto', arial, sans-serif;font-size: 17px;line-height: 23px;color: #202022;font-weight: 400;">
+            $!{content.teaser}
+          </td>
+        </tr>
+        <if(continueReading === true)>
+          <common-table-spacer-element height="9" />
+          $ const linkText = content.linkText || undefined;
+          <common-cta-element link-style=ctaLinkStyle link-text=linkText link-url=content.siteContext.url link-label=linkLabel />
+        </if>
+      </else>
+      <common-table-spacer-element height="32" />
+    </table>
+  </td>
+</tr>

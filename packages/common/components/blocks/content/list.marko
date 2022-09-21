@@ -1,0 +1,44 @@
+import { get, getAsArray } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "@science-medicine-group/package-common/graphql/fragments/content-list";
+
+$ const { config } = out.global;
+
+$ const { sectionName, date, newsletter } = input;
+
+$ const withImage = defaultValue(input.withImage, true);
+$ const imagePosition = defaultValue(input.imagePosition, 'right');
+$ const withHeader = defaultValue(input.withHeader, false);
+$ const withSection = defaultValue(input.withSection, false);
+$ const continueReading = defaultValue(input.continueReading, false);
+
+$ const newsletterConfig = config.get(newsletter.alias);
+
+$ const ctaLinkStyle = defaultValue(newsletterConfig.ctaLinkStyle, undefined);
+
+$ const queryParams = {
+  date: date.valueOf(),
+  newsletterId: newsletter.id,
+  sectionName,
+  limit: input.limit || 3,
+  skip: input.skip || 0,
+  queryFragment,
+};
+
+<marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
+  <if(nodes.length)>
+    <if(withHeader)>
+      <common-list-header-element title=sectionName />
+    </if>
+    <for|content| of=nodes>
+      <common-content-list-item-block
+        content=content
+        with-section=withSection
+        with-image=withImage
+        image-position=imagePosition
+        continue-reading=continueReading
+        cta-link-style=ctaLinkStyle
+      />
+    </for>
+  </if>
+</marko-web-query>

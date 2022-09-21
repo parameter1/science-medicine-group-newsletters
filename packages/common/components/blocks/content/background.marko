@@ -1,0 +1,91 @@
+import { get, getAsObject } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import queryFragment from "@science-medicine-group/package-common/graphql/fragments/content-list";
+
+$ const newsletter = getAsObject(input, "newsletter");
+$ const { sectionName, date } = input;
+
+$ const withImage = defaultValue(input.withImage, true);
+
+$ const imgStyles = {
+  "border": 0,
+  "outline": "none",
+  "text-decoration": "none",
+  "display": "block",
+  "height": "auto !important",
+  "max-width": "100% !important",
+};
+
+$ const imgLinkStyles = {
+  "border": 0,
+  "outline": "none",
+  "text-decoration": "none",
+};
+
+<!-- Check for scheduled promotion -->
+<marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params={
+  date: date.valueOf(),
+  newsletterId: newsletter.id,
+  sectionName,
+  limit: 1,
+  queryFragment,
+}>
+  <if(nodes.length)>
+    $ const content = nodes.slice(0, 1)[0];
+    <tr>
+      <td align="center" valign="top">
+        <table role="presentation" width="610" border="0" bgcolor="#eff1f3" align="center"  cellpadding="0" cellspacing="0" class="wrap003">
+          <tbody>
+            <common-table-spacer-element height="18" />
+            <tr>
+              <td align="left" valign="top" style="font-size: 13px;line-height: 15px;color: #257478;font-family: 'Roboto', Arial, sans-serif;padding: 0 15px;text-transform: uppercase;">
+                ${sectionName}
+              </td>
+            </tr>
+            <common-table-spacer-element height="14" />
+            <if(withImage && content.primaryImage)>
+              <tr>
+                <td align="center" valign="top">
+                  <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                    <marko-newsletter-imgix
+                      src=image.src
+                      alt=image.alt
+                      options={ w: 600, h: 300, fit: "crop" }
+                      class="img_resize1"
+                      attrs={ border: 0, width: 580, align: "center", vspace: 5, style: imgStyles }
+                    >
+                      <@link href=content.siteContext.url target="_blank" attrs={ style: imgLinkStyles } />
+                    </marko-newsletter-imgix>
+                  </marko-core-obj-value>
+                </td>
+              </tr>
+              <common-table-spacer-element height="14" />
+            </if>
+            <tr>
+              <td align="left" valign="top" style="font-size: 18px;line-height: 23px;color: #202022;font-family: 'Roboto', Arial, sans-serif;padding: 0 15px;">
+                $!{content.teaser}
+              </td>
+            </tr>
+            <common-table-spacer-element height="19" />
+            <if(content.linkText && content.linkUrl)>
+              <tr>
+                <td align="left" valign="top" style="font-size: 18px;line-height: 23px;color: #000000;font-family: 'Roboto', Arial, sans-serif;padding: 0 15px;font-style: italic;">
+                  Source
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <a href=content.linkUrl style="font-size: 18px;line-height: 23px;color: #055c9d;font-family: 'Roboto', Arial, sans-serif;padding: 0 15px;text-decoration: none;" target="_blank">
+                    ${content.linkText}
+                  </a>
+                </td>
+              </tr>
+              <common-table-spacer-element height="19" />
+            </if>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <common-table-spacer-element height="36" />
+  </if>
+</marko-web-query>
