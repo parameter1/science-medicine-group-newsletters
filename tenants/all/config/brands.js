@@ -1,7 +1,7 @@
 module.exports = {
   labPulse: {
     logo: {
-      src: '/files/base/smg/all/image/static/lab/lab-logo-newsletter.jpeg',
+      src: '/files/base/smg/all/image/static/lab/letter-from-editor-newsletter.jpeg',
       footerWidth: 200,
     },
     socialMedia: {
