@@ -1,3 +1,37 @@
 {
-
+  "<common-cta-element>": {
+    "template": "./cta.marko",
+    "@link-text": "string",
+    "@link-url": {
+      "type": "string",
+      "required": true
+    },
+    "@link-style": "object",
+    "@link-label": "string"
+  },
+  "<common-link-element>": {
+    "template": "./link.marko",
+    "@link-text": {
+      "type": "string",
+      "required": true
+    },
+    "@link-url": {
+      "type": "string",
+      "required": true
+    },
+    "@link-style": "object",
+    "@link-label": "string"
+  },
+  "<common-list-header-element>": {
+    "template": "./list-header.marko"
+  },
+  "<common-logo-element>": {
+    "template": "./logo.marko"
+  },
+  "<common-table-hr-element>": {
+    "template": "./table-hr.marko"
+  },
+  "<common-table-spacer-element>": {
+    "template": "./table-spacer.marko"
+  }
 }
