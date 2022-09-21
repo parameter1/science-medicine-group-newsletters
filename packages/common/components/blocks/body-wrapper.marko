@@ -1,0 +1,43 @@
+$ const { newsletter, date } = input;
+
+<table role="presentation" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="top">
+      <table role="presentation" width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap000">
+        <tr>
+          <td align="center" valign="top" style="font-family: 'Roboto', arial, sans-serif">
+            <table role="presentation" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <!-- View online block -->
+              <if(input.viewOnline)>
+                <${input.viewOnline} />
+              </if>
+              <else>
+                <common-view-online-block newsletter=newsletter />
+              </else>
+
+              <!-- Header block -->
+              <if(input.header)>
+                <${input.header} />
+              </if>
+              <else>
+                <common-header-block date=date newsletter=newsletter />
+              </else>
+
+              <if(input.body)>
+                <${input.body} />
+              </if>
+
+              <!-- Footer block -->
+              <if(input.footer)>
+                <${input.footer} />
+              </if>
+              <else>
+                <common-footer-block date=date newsletter=newsletter />
+              </else>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
