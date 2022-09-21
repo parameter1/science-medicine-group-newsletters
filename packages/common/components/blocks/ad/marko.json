@@ -1,0 +1,17 @@
+{
+  "<common-ad-emailx-block>": {
+    "template": "./emailx.marko"
+  },
+  "<common-ad-promotion-advertisement-block>": {
+    "template": "./promotion-advertisement.marko"
+  },
+  "<common-ad-promotion-native-block>": {
+    "template": "./promotion-native.marko"
+  },
+  "<common-ad-promotion-sponsored-block>": {
+    "template": "./promotion-sponsored.marko"
+  },
+  "<common-ad-wrapper-block>": {
+    "template": "./wrapper.marko"
+  }
+}
