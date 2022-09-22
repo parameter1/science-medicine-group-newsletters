@@ -1,0 +1,18 @@
+$ const { linkText, linkUrl, linkLabel } = input;
+
+$ const linkStyle = {
+  "font-size": "17px",
+  "line-height": "23px",
+  "color": "#3475b6",
+  "font-weight": "400",
+  "text-decoration": "none",
+  ...input.linkStyle,
+};
+
+<tr>
+  <td align="left" valign="top">
+    <a style=linkStyle href=linkUrl linklabel=linkLabel>
+      ${linkText}
+    </a>
+  </td>
+</tr>

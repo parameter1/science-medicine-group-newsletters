@@ -1,0 +1,52 @@
+import { getAsObject } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import { convertAdToContent } from "../../../native-x";
+import PromotionAdvertisementBlock from "./promotion-advertisement";
+import PromotionNativeBlock from "./promotion-native";
+import PromotionSponsoredBlock from "./promotion-sponsored";
+
+$ const { config } = out.global;
+$ const nativeX = config.getAsObject("nativeX");
+
+$ const adUnit = (input.adUnit) ? getAsObject(input, "adUnit") : false;
+$ const newsletter = getAsObject(input, "newsletter");
+$ const { sectionName, date, placementId } = input;
+
+$ const promotionComponents = {
+  "advertisement-block": PromotionAdvertisementBlock,
+  "native-block": PromotionNativeBlock,
+  "sponsored-block": PromotionSponsoredBlock,
+};
+$ const PromotionComponent = promotionComponents[defaultValue(input.promotionComponent, "advertisement-block")];
+
+<if(nativeX.uri)>
+  <native-x-fetch|{ data }| uri=nativeX.uri date=date placement-id=placementId>
+    <if(data)>
+      <${PromotionComponent}
+        date=date
+        newsletter=newsletter
+        section-name=sectionName
+        content=convertAdToContent(data, { sectionName })
+        link-label-props=input.linkLabelProps
+      />
+    </if>
+    <else-if(adUnit)>
+      <common-ad-emailx-block
+        newsletter=newsletter
+        ad-unit=adUnit
+        date=date
+        dpm=input.dpm
+        link-label-props=input.linkLabelProps
+      />
+    </else-if>
+  </native-x-fetch>
+</if>
+<else-if(adUnit)>
+  <common-ad-emailx-block
+    newsletter=newsletter
+    ad-unit=adUnit
+    date=date
+    dpm=input.dpm
+    link-label-props=input.linkLabelProps
+  />
+</else-if>

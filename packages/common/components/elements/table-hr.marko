@@ -1,0 +1,17 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+
+$ const style = {
+  "font-size": "1px",
+  "line-height": "1px",
+  "border-bottom": "2px solid #eeeeee",
+  ...input.style,
+};
+
+$ const attributes = {
+  align: "center",
+  valign: "top",
+  height: defaultValue(input.height, "12"),
+  ...input.attributes,
+};
+
+<common-table-spacer-element ...attributes style=style />
