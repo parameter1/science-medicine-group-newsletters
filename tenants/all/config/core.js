@@ -10,9 +10,9 @@ const config = {
       enabled: true,
     },
   },
-  'lab-pulse-insight': {
+  'letter-from-the-editor': {
     ...brands.labPulse,
-    name: 'Insight',
+    name: 'Letter From The Editor',
   },
 };
 
