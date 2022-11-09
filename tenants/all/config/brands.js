@@ -12,9 +12,5 @@ module.exports = {
         { provider: 'linkedin', href: 'https://www.linkedin.com/company/labpulse/', target: '_blank' },
       ],
     },
-    footer: {
-      tagline: '',
-      subscribeLink: '',
-    },
   },
 };
