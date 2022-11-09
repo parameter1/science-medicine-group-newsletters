@@ -18,6 +18,12 @@ $ const standardStyle = {
   "padding": "0 15px",
 };
 
+$ const linkStyle = {
+  ...standardStyle,
+  "padding": "none",
+  "text-decoration": "none!important"
+};
+
 $ const standardUnderlineStyle = {
   ...standardStyle,
   "text-decoration": "underline",
@@ -144,17 +150,9 @@ $ const stealthLinkStyle = {
 
                 <tr>
                   <td align="left" valign="top" style=standardStyle>
-                    You are receiving this email because you subscribed to receive relevant news from ${publicationName}.
+                    You are receiving this email because you subscribed to receive relevant news from ${publicationName}. To update your email subscriptions, visit the LabPulse <a href=get(newsletterConfig, "preferenceCenter") style=linkStyle>preference center</a>.
                   </td>
                 </tr>
-                <!-- <common-table-spacer-element height="19" />
-                <tr>
-                  <td align="left" valign="top" style=smallerStyle>
-                    <a href="@{confirmunsubscribelink}@" style=smallerUnderlineStyle>
-                      Unsubscribe here
-                    </a>
-                  </td>
-                </tr> -->
                 <common-table-spacer-element height="19" />
                 <tr>
                   <td align="left" valign="top" style=smallerStyle>
