@@ -1,3 +1,5 @@
+import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
+
 $ const { linkText, linkUrl, linkLabel } = input;
 
 $ const linkStyle = {
@@ -11,7 +13,7 @@ $ const linkStyle = {
 
 <tr>
   <td align="left" valign="top">
-    <a style=linkStyle href=linkUrl linklabel=linkLabel>
+    <a style=linkStyle href=buildLinkUrl(linkUrl) linklabel=linkLabel>
       ${linkText}
     </a>
   </td>

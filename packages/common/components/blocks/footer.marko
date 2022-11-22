@@ -1,5 +1,6 @@
 import { get, getAsObject, getAsArray } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
 $ const { website, config } = out.global;
 $ const { newsletter } = input;
@@ -9,6 +10,11 @@ $ const tagline = get(newsletterConfig, "tagline");
 $ const subscribeLink = get(newsletterConfig, "subscribeLink");
 $ const publicationName = website.get("name");
 $ const footerWidth = defaultValue(get(newsletterConfig, "logo.footerWidth"), 130);
+
+$ const preferenceCenterUrl = buildLinkUrl(
+  get(newsletterConfig, "preferenceCenter"),
+  { email: '{{${email_address}}}' }
+);
 
 $ const standardStyle = {
   "font-size": "17px",
@@ -136,7 +142,7 @@ $ const stealthLinkStyle = {
                   <tr>
                     <td align="left" valign="top" style=standardStyle>
                       <for|link, index| of=contactLinks>
-                        <a href=link.href style=standardUnderlineStyle>
+                        <a href=buildLinkUrl(link.href) style=standardUnderlineStyle>
                           ${link.label}
                         </a>
                         <if(index < (contactLinks.length - 1))>
@@ -150,7 +156,7 @@ $ const stealthLinkStyle = {
 
                 <tr>
                   <td align="left" valign="top" style=standardStyle>
-                    You are receiving this email because you subscribed to receive relevant news from ${publicationName}. To update your email subscriptions, visit the LabPulse <a href=get(newsletterConfig, "preferenceCenter") style=linkStyle>preference center</a>.
+                    You are receiving this email because you subscribed to receive relevant news from ${publicationName}. To update your email subscriptions, visit the LabPulse <a href=preferenceCenterUrl style=linkStyle>preference center</a>.
                   </td>
                 </tr>
                 <common-table-spacer-element height="19" />

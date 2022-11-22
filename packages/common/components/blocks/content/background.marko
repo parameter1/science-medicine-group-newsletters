@@ -1,6 +1,7 @@
 import { get, getAsObject } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import queryFragment from "@science-medicine-group/package-common/graphql/fragments/content-list";
+import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
 $ const newsletter = getAsObject(input, "newsletter");
 $ const { sectionName, date } = input;
@@ -54,7 +55,7 @@ $ const imgLinkStyles = {
                       class="img_resize1"
                       attrs={ border: 0, width: 580, align: "center", vspace: 5, style: imgStyles }
                     >
-                      <@link href=content.siteContext.url target="_blank" attrs={ style: imgLinkStyles } />
+                      <@link href=buildLinkUrl(content.siteContext.url) target="_blank" attrs={ style: imgLinkStyles } />
                     </marko-newsletter-imgix>
                   </marko-core-obj-value>
                 </td>
@@ -75,7 +76,7 @@ $ const imgLinkStyles = {
               </tr>
               <tr>
                 <td align="left" valign="top">
-                  <a href=content.linkUrl style="font-size: 18px;line-height: 23px;color: #055c9d;font-family: 'Roboto', Arial, sans-serif;padding: 0 15px;text-decoration: none;" target="_blank">
+                  <a href=buildLinkUrl(content.linkUrl) style="font-size: 18px;line-height: 23px;color: #055c9d;font-family: 'Roboto', Arial, sans-serif;padding: 0 15px;text-decoration: none;" target="_blank">
                     ${content.linkText}
                   </a>
                 </td>
