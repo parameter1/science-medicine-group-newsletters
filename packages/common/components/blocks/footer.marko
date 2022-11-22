@@ -1,5 +1,6 @@
 import { get, getAsObject, getAsArray } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
 $ const { website, config } = out.global;
 $ const { newsletter } = input;
@@ -136,7 +137,7 @@ $ const stealthLinkStyle = {
                   <tr>
                     <td align="left" valign="top" style=standardStyle>
                       <for|link, index| of=contactLinks>
-                        <a href=link.href style=standardUnderlineStyle>
+                        <a href=buildLinkUrl(link.href) style=standardUnderlineStyle>
                           ${link.label}
                         </a>
                         <if(index < (contactLinks.length - 1))>
