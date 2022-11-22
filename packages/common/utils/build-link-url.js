@@ -3,6 +3,7 @@ const liquidVar = /{{.*?}}/;
 const isObj = v => typeof v === 'object';
 
 const alwaysAppend = {
+  braze_int_id: '{{${braze_id}}}',
   braze_ext_id: '{{${user_id}}}',
 };
 
