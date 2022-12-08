@@ -10,6 +10,22 @@ config
       width: 300,
       height: 250,
     },
+  ])
+  .setAdUnits('bicuspid', [
+    {
+      name: 'ad-slot-1',
+      id: '638616ca58002acd72708c99',
+      width: 300,
+      height: 250,
+    },
+  ])
+  .setAdUnits('sab', [
+    {
+      name: 'ad-slot-1',
+      id: '638616fd58002a6962708cd2',
+      width: 300,
+      height: 250,
+    },
   ]);
 
 module.exports = config;

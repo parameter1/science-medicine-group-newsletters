@@ -13,4 +13,31 @@ module.exports = {
       ],
     },
   },
+  drb: {
+    logo: {
+      src: '/files/base/smg/all/image/static/drb/drb-logo.svg',
+      footerWidth: 200,
+    },
+    socialMedia: {
+      imagePath: '/files/base/smg/all/image/static/newsletter',
+      links: [
+        { provider: 'facebook', href: 'https://www.facebook.com/DrBicuspid', target: '_blank' },
+        { provider: 'twitter', href: 'https://twitter.com/drbicuspid', target: '_blank' },
+      ],
+    },
+  },
+  sab: {
+    logo: {
+      src: '/files/base/smg/all/image/static/sab/sab-logo.svg',
+      footerWidth: 200,
+    },
+    socialMedia: {
+      imagePath: '/files/base/smg/all/image/static/newsletter',
+      links: [
+        { provider: 'facebook', href: 'https://www.facebook.com/ScienceAdvisoryBoard', target: '_blank' },
+        { provider: 'twitter', href: 'https://twitter.com/scienceboard', target: '_blank' },
+        { provider: 'linkedin', href: 'https://www.linkedin.com/company/the-science-advisory-board/', target: '_blank' },
+      ],
+    },
+  },
 };

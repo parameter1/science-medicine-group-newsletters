@@ -15,6 +15,16 @@ const config = {
     name: 'Letter From The Editor',
     preferenceCenter: 'https://www.labpulse.com/user/subscribe',
   },
+  bicuspid: {
+    ...brands.drb,
+    name: 'Dr. Bicuspid',
+    preferenceCenter: 'https://www.labpulse.com/user/subscribe',
+  },
+  sab: {
+    ...brands.sab,
+    name: 'Science Advisory Board',
+    preferenceCenter: 'https://www.labpulse.com/user/subscribe',
+  },
 };
 
 module.exports = config;
