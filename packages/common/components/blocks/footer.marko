@@ -13,7 +13,7 @@ $ const footerWidth = defaultValue(get(newsletterConfig, "logo.footerWidth"), 13
 
 $ const preferenceCenterUrl = buildLinkUrl(
   get(newsletterConfig, "preferenceCenter"),
-  { email: '{{${email_address}}}' }
+  { email: '{{${email_address} | url_encode }}' }
 );
 
 $ const standardStyle = {
