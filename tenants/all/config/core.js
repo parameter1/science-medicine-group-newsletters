@@ -12,18 +12,33 @@ const config = {
   },
   'letter-from-the-editor': {
     ...brands.labPulse,
-    name: 'Letter From The Editor',
+    name: 'LabPulse-Letter From The Editor',
     preferenceCenter: 'https://www.labpulse.com/user/subscribe',
   },
-  bicuspid: {
+  'labpulse-breaking-news': {
+    ...brands.labPulse,
+    name: 'LabPulse-Breaking News',
+    preferenceCenter: 'https://www.labpulse.com/user/subscribe',
+  },
+  'labpulse-community-insider': {
+    ...brands.labPulse,
+    name: 'LabPulse-Community Insider',
+    preferenceCenter: 'https://www.labpulse.com/user/subscribe',
+  },
+  'drb-lfte': {
     ...brands.drb,
-    name: 'Dr. Bicuspid',
-    preferenceCenter: 'https://www.labpulse.com/user/subscribe',
+    name: 'Dr. Bicuspid-Letter From The Editor',
+    preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
   },
-  sab: {
-    ...brands.sab,
-    name: 'Science Advisory Board',
-    preferenceCenter: 'https://www.labpulse.com/user/subscribe',
+  'drb-breaking-news': {
+    ...brands.drb,
+    name: 'Dr. Bicuspid-Breaking News',
+    preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
+  },
+  'drb-community-insider': {
+    ...brands.drb,
+    name: 'Dr. Bicuspid-Community Insider',
+    preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
   },
 };
 
