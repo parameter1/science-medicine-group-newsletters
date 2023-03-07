@@ -1,5 +1,11 @@
 {
   "<common-standard-layout>": {
     "template": "./standard.marko"
+  },
+  "<common-breaking-news-layout>": {
+    "template": "./breaking-news.marko"
+  },
+  "<common-insider-layout>": {
+    "template": "./insider.marko"
   }
 }
