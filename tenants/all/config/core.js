@@ -10,7 +10,7 @@ const config = {
       enabled: true,
     },
   },
-  'letter-from-the-editor': {
+  'labpulse-lfte': {
     ...brands.labPulse,
     name: 'LabPulse-Letter From The Editor',
     preferenceCenter: 'https://www.labpulse.com/user/subscribe',
