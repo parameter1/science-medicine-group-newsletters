@@ -32,16 +32,6 @@ $ const nativeX = config.getAsObject("nativeX");
           skip=0
         />
 
-        <common-content-list-block
-          date=date
-          section-name="Main"
-          newsletter=newsletter
-          with-image=false
-          with-section=true
-          limit=1
-          skip=1
-        />
-
         <!-- Ad Slot 1 -->
         <common-ad-wrapper-block
           newsletter=newsletter
@@ -50,29 +40,6 @@ $ const nativeX = config.getAsObject("nativeX");
           placement-id=get(nativeX, `placements.${newsletter.alias}.slot-1`)
           date=date
         />
-
-        <!-- Content list block -->
-        <common-content-list-block
-          date=date
-          section-name="Main"
-          newsletter=newsletter
-          with-image=false
-          with-section=true
-          skip=2
-          limit=8
-        />
-
-        <!-- Content list block -->
-        <!-- <common-content-list-block
-          date=date
-          section-name="Editor's Note"
-          newsletter=newsletter
-          with-image=true
-          image-position="right"
-          with-header=true
-          continue-reading=true
-          limit=1
-        /> -->
 
       </@body>
     </common-body-wrapper-block>

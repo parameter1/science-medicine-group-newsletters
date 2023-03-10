@@ -20,26 +20,24 @@ $ const nativeX = config.getAsObject("nativeX");
     <common-body-wrapper-block newsletter=newsletter date=date>
       <@body>
 
+        <!-- Community Logo -->
+        <common-ad-wrapper-block
+        date=date
+        newsletter=newsletter
+        promotion-component="sponsored-block"
+        placement-id=get(nativeX, `placements.${newsletter.alias}.community`)
+        />
+
         <!-- Content list block -->
         <common-content-list-block
           date=date
-          section-name="Main"
+          section-name="Insider"
           newsletter=newsletter
           with-image=true
           image-position="right"
-          with-section=true
+          with-header=true
+          continue-reading=true
           limit=1
-          skip=0
-        />
-
-        <common-content-list-block
-          date=date
-          section-name="Main"
-          newsletter=newsletter
-          with-image=false
-          with-section=true
-          limit=1
-          skip=1
         />
 
         <!-- Ad Slot 1 -->
@@ -56,23 +54,12 @@ $ const nativeX = config.getAsObject("nativeX");
           date=date
           section-name="Main"
           newsletter=newsletter
-          with-image=false
-          with-section=true
-          skip=2
-          limit=8
-        />
-
-        <!-- Content list block -->
-        <!-- <common-content-list-block
-          date=date
-          section-name="Editor's Note"
-          newsletter=newsletter
           with-image=true
           image-position="right"
-          with-header=true
-          continue-reading=true
-          limit=1
-        /> -->
+          with-section=true
+          limit=10
+          skip=0
+        />
 
       </@body>
     </common-body-wrapper-block>

@@ -19,7 +19,7 @@ $ const promotionComponents = {
 };
 $ const PromotionComponent = promotionComponents[defaultValue(input.promotionComponent, "advertisement-block")];
 
-<if(nativeX.uri)>
+<if(nativeX.uri && placementId)>
   <native-x-fetch|{ data }| uri=nativeX.uri date=date placement-id=placementId>
     <if(data)>
       <${PromotionComponent}
