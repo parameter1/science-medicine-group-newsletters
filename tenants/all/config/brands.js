@@ -1,9 +1,5 @@
 module.exports = {
   labPulse: {
-    logo: {
-      src: '/files/base/smg/all/image/static/lab/letter-from-editor-newsletter.jpeg',
-      footerWidth: 200,
-    },
     socialMedia: {
       imagePath: '/files/base/smg/all/image/static/newsletter',
       links: [
@@ -14,10 +10,6 @@ module.exports = {
     },
   },
   drb: {
-    logo: {
-      src: '/files/base/smg/all/image/static/drb/drb-logo.svg',
-      footerWidth: 200,
-    },
     socialMedia: {
       imagePath: '/files/base/smg/all/image/static/newsletter',
       links: [
