@@ -4,7 +4,7 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 $ const { nativeX: nxConfig } = out.global;
 $ const { log } = console;
-$ const { apiUrl, name, description } = input;
+$ const { apiUrl, name, description, ctaLinkStyle } = input;
 $ const button = getAsObject(input, "button");
 $ const nativeX = getAsObject(input, "nativeX");
 
@@ -57,7 +57,7 @@ $ const linkHeader = input.linkHeader || false;
     </table>
 
     <table>
-      <tr>
+      <!-- <tr>
         <td align="center" valign="top">
           <marko-core-obj-value|{ value: image }| field="primaryImage" as="object">
             <marko-newsletter-imgix
@@ -71,8 +71,16 @@ $ const linkHeader = input.linkHeader || false;
             </marko-newsletter-imgix>
           </marko-core-obj-value>
         </td>
-      </tr>
+      </tr> -->
 
+      <common-content-list-item-block
+        content=heroNode
+        with-section=false
+        with-image=true
+        image-position="right"
+        continue-reading=false
+        cta-link-style=ctaLinkStyle
+      />
 
       <!-- possible layout when API is pulling in content -->
 
