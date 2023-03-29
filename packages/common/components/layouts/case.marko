@@ -1,6 +1,7 @@
 import { get } from "@parameter1/base-cms-object-path";
 import { parseBooleanHeader } from "@parameter1/base-cms-utils";
 import queryFragment from "@science-medicine-group/package-common/graphql/fragments/content-list";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 $ const { website, config, req } = out.global;
 $ const { newsletter, date } = input.data;
@@ -9,12 +10,15 @@ $ const emailX = config.get("emailX");
 $ const nativeX = config.getAsObject("nativeX");
 $ const { id, alias, name, pageNode } = input;
 
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const ctaLinkStyle = defaultValue(newsletterConfig.ctaLinkStyle, undefined);
+
 $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
     id: node.ID,
     type: 'Case',
     shortName: node.name,
     teaser: node.description,
-    siteContext: { path: `https://my.drbicuspid.com/cases/${node.url}` },
+    siteContext: { url: `https://my.drbicuspid.com/cases/${node.url}` },
     primaryImage: { src: node.imagepath }
   })));
 
@@ -37,6 +41,7 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           description="Check out our Case of the Week!"
           button={ link: "https://my.drbicuspid.com/cases", text: "View All Cases" }
           native-x={ placementName: 'cases', placementAliases: ['cases'] }
+          cta-link-style=ctaLinkStyle
         />
 
       </@body>
