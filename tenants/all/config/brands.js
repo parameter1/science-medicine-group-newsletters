@@ -15,6 +15,8 @@ module.exports = {
       links: [
         { provider: 'facebook', href: 'https://www.facebook.com/DrBicuspid', target: '_blank' },
         { provider: 'twitter', href: 'https://twitter.com/drbicuspid', target: '_blank' },
+        { provider: 'linkedin', href: 'https://www.linkedin.com/company/drbicuspid.com/', target: '_blank' },
+        { provider: 'instagram', href: 'https://www.instagram.com/drbicuspid/', target: '_blank' },
       ],
     },
   },
