@@ -23,7 +23,7 @@ module.exports = {
       'slot-1': '63861a1cadecb1000112fe8b',
     },
     'drb-case-of-the-week': {
-      case: '642310db713241000128c421',
+      'case-sponsor': '642310db713241000128c421',
     },
   },
 };
