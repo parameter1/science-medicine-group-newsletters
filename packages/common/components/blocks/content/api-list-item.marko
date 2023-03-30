@@ -30,11 +30,11 @@ $ const linkLabel = input.storyLocation ? `story|${input.storyLocation}|${conten
     <table role="presentation" width="610" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap003">
       <if(withImage && imagePosition === 'right' && content.primaryImage)>
         <tr>
-          <td align="center" valign="top" dir="ltr">
+          <td align="center" valign="top">
             <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td align="left" valign="top">
-                  <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" class="pad" style="padding: 0 30px 0px 0;">
+                  <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" class="pad" style="padding: 0 20px 0px 0;">
                     <tr>
                       <td align="left" valign="top">
                         <a style="font-family: 'Roboto', arial, sans-serif;font-size: 24px;line-height: 28px;color: #202022;font-weight: 700;text-decoration: none;" href=url target="_blank">
@@ -44,7 +44,7 @@ $ const linkLabel = input.storyLocation ? `story|${input.storyLocation}|${conten
                     </tr>
                   </table>
                 </td>
-                <td align="right" valign="top" width="200" class="wdt">
+                <td align="right" valign="top" width="150" class="wdt">
                   <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
                     <marko-newsletter-imgix
                       src=image.src
@@ -76,7 +76,9 @@ $ const linkLabel = input.storyLocation ? `story|${input.storyLocation}|${conten
           </td>
         </tr>
       </if>
-      <common-table-spacer-element height="32" />
+      <common-table-spacer-element height="16" />
+      <common-table-hr-element height="2" />
+      <common-table-spacer-element height="16" />
     </table>
   </td>
 </tr>
