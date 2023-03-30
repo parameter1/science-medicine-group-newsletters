@@ -17,5 +17,8 @@
   },
   "<common-view-online-block>": {
     "template": "./view-online.marko"
+  },
+  "<common-external-api-block>": {
+    "template": "./external-api.marko"
   }
 }

@@ -4,6 +4,7 @@ import { convertAdToContent } from "../../../native-x";
 import PromotionAdvertisementBlock from "./promotion-advertisement";
 import PromotionNativeBlock from "./promotion-native";
 import PromotionSponsoredBlock from "./promotion-sponsored";
+import PromotionCaseNativeBlock from "./promotion-case-native";
 
 $ const { config } = out.global;
 $ const nativeX = config.getAsObject("nativeX");
@@ -16,6 +17,7 @@ $ const promotionComponents = {
   "advertisement-block": PromotionAdvertisementBlock,
   "native-block": PromotionNativeBlock,
   "sponsored-block": PromotionSponsoredBlock,
+  "case-native-block": PromotionCaseNativeBlock,
 };
 $ const PromotionComponent = promotionComponents[defaultValue(input.promotionComponent, "advertisement-block")];
 

@@ -7,5 +7,8 @@
   },
   "<common-content-list-item-block>": {
     "template": "./list-item.marko"
+  },
+  "<common-content-api-list-item-block>": {
+    "template": "./api-list-item.marko"
   }
 }

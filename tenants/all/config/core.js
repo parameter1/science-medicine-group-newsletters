@@ -64,6 +64,15 @@ const config = {
     },
     preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
   },
+  'drb-case-of-the-week': {
+    ...brands.drb,
+    name: 'Dr. Bicuspid-Case of the Week',
+    logo: {
+      src: '/files/base/smg/all/image/static/drb/DrB_EmailHeader_CaseOfTheWeek_v3.jpg',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
+  },
 };
 
 module.exports = config;

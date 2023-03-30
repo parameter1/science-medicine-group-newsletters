@@ -13,5 +13,8 @@
   },
   "<common-ad-wrapper-block>": {
     "template": "./wrapper.marko"
+  },
+  "<common-ad-promotion-case-native-block>": {
+    "template": "./promotion-case-native.marko"
   }
 }
