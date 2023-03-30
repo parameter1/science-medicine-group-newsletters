@@ -68,7 +68,7 @@ const config = {
     ...brands.drb,
     name: 'Dr. Bicuspid-Case of the Week',
     logo: {
-      src: '/files/base/smg/all/image/static/drb/DrB_EmailHeader_Insider_v3.jpg',
+      src: '/files/base/smg/all/image/static/drb/DrB_EmailHeader_CaseOfTheWeek_v3.jpg',
       footerWidth: 200,
     },
     preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
