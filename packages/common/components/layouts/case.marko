@@ -34,6 +34,13 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
     <common-body-wrapper-block newsletter=newsletter date=date>
       <@body>
 
+        <common-ad-wrapper-block
+          date=date
+          newsletter=newsletter
+          promotion-component="case-native-block"
+          placement-id=get(nativeX, `placements.${newsletter.alias}.case-sponsor`)
+        />
+
         <common-external-api-block
           api-url="https://my.drbicuspid.com/wp-json/mo/v1/getCase/3"
           resolved-to-nodes-converter=resolvedToNodesConverter
