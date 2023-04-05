@@ -29,7 +29,6 @@ $ const PromotionComponent = promotionComponents[defaultValue(input.promotionCom
         newsletter=newsletter
         section-name=sectionName
         content=convertAdToContent(data, { sectionName })
-        link-label-props=input.linkLabelProps
       />
     </if>
     <else-if(adUnit)>
@@ -38,7 +37,6 @@ $ const PromotionComponent = promotionComponents[defaultValue(input.promotionCom
         ad-unit=adUnit
         date=date
         dpm=input.dpm
-        link-label-props=input.linkLabelProps
       />
     </else-if>
   </native-x-fetch>
@@ -49,6 +47,5 @@ $ const PromotionComponent = promotionComponents[defaultValue(input.promotionCom
     ad-unit=adUnit
     date=date
     dpm=input.dpm
-    link-label-props=input.linkLabelProps
   />
 </else-if>

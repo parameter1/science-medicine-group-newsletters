@@ -2,7 +2,7 @@ import { get, getAsObject } from "@parameter1/base-cms-object-path";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
 $ const newsletter = getAsObject(input, "newsletter");
-$ const { sectionName, date, content, linkLabelProps } = input;
+$ const { sectionName, date, content } = input;
 
 $ const url = buildLinkUrl(get(content, "siteContext.url"));
 $ const company = getAsObject(content, "company");
