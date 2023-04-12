@@ -18,7 +18,7 @@ module.exports = (href, params = {}) => {
   // Decode any liquid tags to ensure successful replacement.
   Object.entries(toAppend).forEach(([, value]) => {
     if (liquidVar.test(value)) {
-      encoded = encoded.replace(encodeURIComponent(value), decodeURIComponent(value));
+      encoded = encoded.replace(`${encodeURIComponent(value)}`.replace(/%20/ig, '+'), decodeURIComponent(value));
     }
   });
   return encoded;
