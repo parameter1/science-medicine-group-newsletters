@@ -73,6 +73,15 @@ const config = {
     },
     preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
   },
+  'testing-template': {
+    ...brands.drb,
+    name: 'Test Template',
+    logo: {
+      src: '/files/base/smg/all/image/static/drb/DrB_EmailHeader_BreakingNews_v3.jpg',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
+  },
 };
 
 module.exports = config;
