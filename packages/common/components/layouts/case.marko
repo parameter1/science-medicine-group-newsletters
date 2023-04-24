@@ -51,6 +51,13 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           cta-link-style=ctaLinkStyle
         />
 
+        <common-ad-wrapper-block
+          newsletter=newsletter
+          promotion-component="advertisement-block"
+          ad-unit=emailX.getAdUnit({ name: 'ad-slot-1', alias: newsletter.alias })
+          date=date
+        />
+
       </@body>
     </common-body-wrapper-block>
   </@body>
