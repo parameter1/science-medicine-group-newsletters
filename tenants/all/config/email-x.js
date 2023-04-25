@@ -51,48 +51,48 @@ config
       height: 250,
     },
   ])
-  .setAdUnits('sab', [
+  .setAdUnits('drb-sample', [
     {
       name: 'ad-slot-1',
-      id: '638616fd58002a6962708cd2',
-      width: 300,
-      height: 250,
-    },
-  ])
-  .setAdUnits('testing-template', [
-    {
-      name: 'ad-slot-1',
-      id: '6442c99cf620c9c4d389373b',
+      id: '6446c3f7f89e5833c74c6448',
       width: 300,
       height: 250,
     },
     {
       name: 'ad-slot-2',
-      id: '6442c9b0f89e58c61a4c61f3',
+      id: '6446c413f620c94b888939b4',
       width: 300,
       height: 250,
     },
     {
       name: 'ad-slot-3',
-      id: '6442c9c3f89e5840fe4c61fd',
+      id: '6446c421f620c974228939be',
       width: 300,
       height: 250,
     },
     {
       name: 'ad-slot-4',
-      id: '6442c9d7f89e588a7c4c6210',
+      id: '6446c432f620c9f0168939d1',
       width: 300,
       height: 250,
     },
     {
       name: 'ad-slot-5',
-      id: '6442c9e6f620c931f1893772',
+      id: '6446c446f89e5869944c6488',
       width: 300,
       height: 250,
     },
     {
       name: 'ad-slot-6',
-      id: '6442c9f8f620c98e9d893785',
+      id: '6446c459f620c942a18939ed',
+      width: 300,
+      height: 250,
+    },
+  ])
+  .setAdUnits('sab', [
+    {
+      name: 'ad-slot-1',
+      id: '638616fd58002a6962708cd2',
       width: 300,
       height: 250,
     },
