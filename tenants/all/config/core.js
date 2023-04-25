@@ -45,6 +45,7 @@ const config = {
       footerWidth: 200,
     },
     preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
+    caseBlock: true,
   },
   'drb-breaking-news': {
     ...brands.drb,
