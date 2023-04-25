@@ -10,5 +10,8 @@
   },
   "<common-case-layout>": {
     "template": "./case.marko"
+  },
+  "<common-standard-no-case-layout>": {
+    "template": "./standard-no-case.marko"
   }
 }
