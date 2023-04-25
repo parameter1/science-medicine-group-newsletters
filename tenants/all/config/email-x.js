@@ -51,6 +51,14 @@ config
       height: 250,
     },
   ])
+  .setAdUnits('drb-case-of-the-week', [
+    {
+      name: 'ad-slot-1',
+      id: '6446764ff620c92f5c89387b',
+      width: 300,
+      height: 250,
+    },
+  ])
   .setAdUnits('drb-sample', [
     {
       name: 'ad-slot-1',
