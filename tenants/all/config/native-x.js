@@ -12,6 +12,7 @@ module.exports = {
     },
     'drb-lfte': {
       'slot-1': '638619dad6ced5000110a551',
+      'case-sponsor': '643d7f61b91bf50001eff980',
     },
     'drb-community-insider': {
       community: '6406acf593fb8e0001c3ac7c',
