@@ -10,6 +10,9 @@ $ const tagline = get(newsletterConfig, "tagline");
 $ const subscribeLink = get(newsletterConfig, "subscribeLink");
 $ const publicationName = website.get("name");
 $ const footerWidth = defaultValue(get(newsletterConfig, "logo.footerWidth"), 130);
+$ const url = buildLinkUrl(website.get("origin"));
+$ const logoFooterSrc = newsletterConfig.logo.footerSrc;
+$ const alt = defaultValue(input.alt, newsletter.name);
 
 $ const preferenceCenterUrl = buildLinkUrl(
   get(newsletterConfig, "preferenceCenter"),
@@ -78,7 +81,19 @@ $ const stealthLinkStyle = {
                 <common-table-spacer-element height="18" />
                 <tr>
                   <td align="center" valign="top">
-                    <common-logo-element newsletter=newsletter alt=publicationName width=footerWidth />
+                    <if(logoFooterSrc)>
+                      <marko-newsletter-imgix
+                        src=logoFooterSrc
+                        alt=alt
+                        options={ w: 200 }
+                        attrs={ width: 200 }
+                      >
+                        <@link href=url target="_blank" />
+                      </marko-newsletter-imgix>
+                    </if>
+                    <else>
+                      <common-logo-element newsletter=newsletter alt=publicationName width=footerWidth />
+                    </else>
                   </td>
                 </tr>
                 <if(tagline)>
