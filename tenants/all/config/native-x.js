@@ -6,6 +6,7 @@ module.exports = {
     },
     'labpulse-community-insider': {
       community: '6406ac7a93fb8e0001c3abf3',
+      'slot-1': '64904c499f8e110001498812',
     },
     'labpulse-breaking-news': {
       'slot-1': '6406aca393fb8e0001c3ac2a',
@@ -16,6 +17,7 @@ module.exports = {
     },
     'drb-community-insider': {
       community: '6406acf593fb8e0001c3ac7c',
+      'slot-1': '64904c3261871f00013e0229',
     },
     'drb-breaking-news': {
       'slot-1': '6406ad19e78b060001976ca1',
