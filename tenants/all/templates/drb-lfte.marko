@@ -47,6 +47,17 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           limit=1
         />
 
+        <common-content-list-block
+          date=date
+          section-name="Main"
+          newsletter=newsletter
+          with-image=true
+          image-position="right"
+          with-section=true
+          limit=1
+          skip=0
+        />
+
         <!-- Content list block -->
         <common-content-list-block
           date=date
@@ -55,7 +66,7 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           with-image=false
           with-section=true
           limit=1
-          skip=0
+          skip=1
         />
 
         <common-content-list-block
@@ -66,7 +77,7 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           image-position="right"
           with-section=true
           limit=1
-          skip=1
+          skip=2
         />
 
         <!-- Ad Slot 1 -->
@@ -85,8 +96,8 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           newsletter=newsletter
           with-image=false
           with-section=true
-          skip=2
-          limit=8
+          skip=3
+          limit=7
         />
 
         <if(caseBlock === true)>
