@@ -18,10 +18,19 @@
     "test": "lerna run test"
   },
   "devDependencies": {
-    "@parameter1/base-cms-marko-compiler": "^2.0.0",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-import": "^2.18.2",
+    "@parameter1/base-cms-eslint": "^4.5.12",
+    "@parameter1/base-cms-marko-compiler": "^4.5.12",
     "lerna": "^6.5.1"
-  }
+  },
+  "resolutions": {
+    "editorconfig": "1.0.2"
+  },
+  "engines": {
+    "node": ">=14.15"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ]
 }
