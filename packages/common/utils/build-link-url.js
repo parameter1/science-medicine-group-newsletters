@@ -1,6 +1,6 @@
 /* eslint-disable no-template-curly-in-string */
 const liquidVar = /{{.*?}}/;
-const isObj = v => typeof v === 'object';
+const isObj = (v) => typeof v === 'object';
 
 const alwaysAppend = {
   braze_int_id: '{{${braze_id}}}',
