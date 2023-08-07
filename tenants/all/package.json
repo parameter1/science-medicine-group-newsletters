@@ -20,6 +20,6 @@
     "@science-medicine-group/package-common": "^0.0.24",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
-    "newrelic": "^5.11.0"
+    "newrelic": "^9.10.1"
   }
 }
