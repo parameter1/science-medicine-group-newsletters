@@ -1,13 +1,2 @@
-module.exports = {
-  extends: 'airbnb-base',
-  plugins: [
-    'import'
-  ],
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.marko'],
-      },
-    },
-  },
-};
+// eslint-disable-next-line import/no-extraneous-dependencies
+module.exports = require('@parameter1/base-cms-eslint/eslintrc.server');

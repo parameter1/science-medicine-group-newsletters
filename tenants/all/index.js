@@ -10,6 +10,6 @@ module.exports = startServer({
   coreConfig,
   customConfig,
   publicPath: 'public',
-  onStart: app => app.set('trust proxy', 'loopback, linklocal, uniquelocal'),
-  onAsyncBlockError: e => newrelic.noticeError(e),
-}).then(() => log('Newsletters started!')).catch(e => setImmediate(() => { throw e; }));
+  onStart: (app) => app.set('trust proxy', 'loopback, linklocal, uniquelocal'),
+  onAsyncBlockError: (e) => newrelic.noticeError(e),
+}).then(() => log('Newsletters started!')).catch((e) => setImmediate(() => { throw e; }));

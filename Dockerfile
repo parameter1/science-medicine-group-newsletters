@@ -1,19 +1,20 @@
-FROM node:10.15 as build
-WORKDIR /root
-ENV NODE_ENV production
+FROM node:14.21 as build
+WORKDIR /repo
 ARG TENANT
 
-ADD package.json yarn.lock /root/
-ADD packages /root/packages
-ADD tenants/$TENANT /root/tenants/$TENANT
-RUN yarn --production --pure-lockfile
+ADD package.json yarn.lock lerna.json /repo/
+ADD packages /repo/packages
+ADD tenants/$TENANT /repo/tenants/$TENANT
+RUN --mount=type=cache,target=/repo/.yarn YARN_CACHE_FOLDER=/repo/.yarn yarn install --frozen-lockfile
+ENV NODE_ENV production
+RUN yarn build
 
-WORKDIR /root/tenants/$TENANT
+WORKDIR /repo/tenants/$TENANT
 
-FROM node:10.15-alpine
+FROM node:14.21-alpine
 ENV NODE_ENV production
 ENV PORT 80
 ARG TENANT
-COPY --from=build /root /root
-WORKDIR /root/tenants/$TENANT
+COPY --from=build /repo /repo
+WORKDIR /repo/tenants/$TENANT
 ENTRYPOINT [ "node", "index.js" ]

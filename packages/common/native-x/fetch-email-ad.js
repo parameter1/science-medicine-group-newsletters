@@ -1,5 +1,5 @@
-const { isObject } = require('@parameter1/base-cms-utils');
 const { URLSearchParams } = require('url');
+const { isObject } = require('@parameter1/base-cms-utils');
 const fetch = require('node-fetch');
 const createHeaders = require('@parameter1/base-cms-marko-web-native-x/utils/create-headers');
 
