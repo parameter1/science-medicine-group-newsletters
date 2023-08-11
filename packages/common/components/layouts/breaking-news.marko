@@ -35,7 +35,7 @@ $ const nativeX = config.getAsObject("nativeX");
           newsletter=newsletter
           promotion-component="advertisement-block"
           ad-unit=emailX.getAdUnit({ name: 'ad-slot-1', alias: newsletter.alias })
-          placement-id=get(nativeX, `placements.${newsletter.alias}.slot-1`)
+          placement-id=nativeX.getPlacement({ name: 'slot-1', aliases: [newsletter.alias] }).id
           date=date
         />
 

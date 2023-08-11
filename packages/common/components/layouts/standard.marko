@@ -62,7 +62,7 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           newsletter=newsletter
           promotion-component="advertisement-block"
           ad-unit=emailX.getAdUnit({ name: 'ad-slot-1', alias: newsletter.alias })
-          placement-id=get(nativeX, `placements.${newsletter.alias}.slot-1`)
+          placement-id=nativeX.getPlacement({ name: 'slot-1', aliases: [newsletter.alias] }).id
           date=date
         />
 
@@ -109,7 +109,7 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
             date=date
             newsletter=newsletter
             promotion-component="case-native-block"
-            placement-id=get(nativeX, `placements.${newsletter.alias}.case-sponsor`)
+            placement-id=nativeX.getPlacement({ name: 'case-sponsor', aliases: [newsletter.alias] }).id
           />
 
           <common-external-api-block

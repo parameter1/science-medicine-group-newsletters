@@ -1009,6 +1009,15 @@
     moment "^2.29.1"
     node-fetch "^2.6.9"
 
+"@parameter1/base-cms-marko-newsletters-native-x@^4.34.6":
+  version "4.34.6"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-newsletters-native-x/-/base-cms-marko-newsletters-native-x-4.34.6.tgz#223e8e4ed8f481e3ca0b293759c2daf32bfed8a3"
+  integrity sha512-wCBH/Y4b7MI8aa10jSFJ+D6ioBXJj+vYARyud/DPUQU8kYa1nN29LqhSOg2L9d8KqPfwiQXqthTcTzh290gnww==
+  dependencies:
+    "@parameter1/base-cms-object-path" "^4.5.12"
+    "@parameter1/base-cms-utils" "^4.5.12"
+    node-fetch "^2.6.9"
+
 "@parameter1/base-cms-marko-newsletters@^4.32.0":
   version "4.32.0"
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-newsletters/-/base-cms-marko-newsletters-4.32.0.tgz#b806ac2e1ce42d58abe77c14b44c6ac155bfccdd"
@@ -1041,38 +1050,6 @@
   dependencies:
     "@parameter1/base-cms-marko-compiler" "^4.5.12"
     marko "~4.20.0"
-
-"@parameter1/base-cms-marko-web-deferred-script-loader@^4.5.12":
-  version "4.5.12"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-deferred-script-loader/-/base-cms-marko-web-deferred-script-loader-4.5.12.tgz#62dc0153443382c74cbd4ac5e6ad09acca525b58"
-  integrity sha512-lXS2/W+ZurlxKczhfArKdsbf/lE6YemKtMnPHHbRt8xiCPs0ImZZFCWqdt2u/8+I+yJULqfZMEA2CYqflOhJIQ==
-  dependencies:
-    "@parameter1/base-cms-object-path" "^4.5.12"
-
-"@parameter1/base-cms-marko-web-gtm@^4.17.1":
-  version "4.17.1"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-gtm/-/base-cms-marko-web-gtm-4.17.1.tgz#15e4fa00148487f83573b576d779b2d8a3dca31f"
-  integrity sha512-OQRrkg1cbBn8WqzSj+fyuapYCEgRgBgIe9fZOadY9P4nKg3sn5TpNQZiOuxRQmvoHLxj/UDdUkXYlwfRrOWNTA==
-  dependencies:
-    "@parameter1/base-cms-inflector" "^4.5.12"
-    "@parameter1/base-cms-marko-web-deferred-script-loader" "^4.5.12"
-    "@parameter1/base-cms-object-path" "^4.5.12"
-    "@parameter1/base-cms-utils" "^4.5.12"
-    graphql "^14.7.0"
-    graphql-tag "^2.12.6"
-
-"@parameter1/base-cms-marko-web-native-x@^4.32.0":
-  version "4.32.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-native-x/-/base-cms-marko-web-native-x-4.32.0.tgz#90f674f5874f546846ba9d737eafab175e2090a1"
-  integrity sha512-tqwxJF1uhIn5xmc9mcjgupW9Xi+SJHxpUCG81+kxbMoUTS9j6OzKBymMrsl1izKK9JAfRgUv60y7Szl5LtzxVA==
-  dependencies:
-    "@parameter1/base-cms-marko-web-deferred-script-loader" "^4.5.12"
-    "@parameter1/base-cms-marko-web-gtm" "^4.17.1"
-    "@parameter1/base-cms-object-path" "^4.5.12"
-    "@parameter1/base-cms-utils" "^4.5.12"
-    "@parameter1/base-cms-web-common" "^4.32.0"
-    graphql-tag "^2.12.6"
-    node-fetch "^2.6.9"
 
 "@parameter1/base-cms-newsletter-cli@^4.5.12":
   version "4.5.12"

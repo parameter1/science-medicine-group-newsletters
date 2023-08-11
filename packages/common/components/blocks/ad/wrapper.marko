@@ -1,6 +1,6 @@
 import { getAsObject } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
-import { convertAdToContent } from "../../../native-x";
+import { convertAdToContent } from "@parameter1/base-cms-marko-newsletters-native-x/utils";
 import PromotionAdvertisementBlock from "./promotion-advertisement";
 import PromotionNativeBlock from "./promotion-native";
 import PromotionSponsoredBlock from "./promotion-sponsored";
@@ -22,7 +22,7 @@ $ const promotionComponents = {
 $ const PromotionComponent = promotionComponents[defaultValue(input.promotionComponent, "advertisement-block")];
 
 <if(nativeX.uri && placementId)>
-  <native-x-fetch|{ data }| uri=nativeX.uri date=date placement-id=placementId>
+  <core-native-x-fetch|{ data }| uri=nativeX.uri date=date placement-id=placementId>
     <if(data)>
       <${PromotionComponent}
         date=date
@@ -39,7 +39,7 @@ $ const PromotionComponent = promotionComponents[defaultValue(input.promotionCom
         dpm=input.dpm
       />
     </else-if>
-  </native-x-fetch>
+  </core-native-x-fetch>
 </if>
 <else-if(adUnit)>
   <common-ad-emailx-block

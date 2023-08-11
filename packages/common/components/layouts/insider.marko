@@ -25,7 +25,7 @@ $ const nativeX = config.getAsObject("nativeX");
         date=date
         newsletter=newsletter
         promotion-component="sponsored-block"
-        placement-id=get(nativeX, `placements.${newsletter.alias}.community`)
+        placement-id=nativeX.getPlacement({ name: 'community', aliases: [newsletter.alias] }).id
         />
 
         <!-- Content list block -->
@@ -55,7 +55,7 @@ $ const nativeX = config.getAsObject("nativeX");
         <common-ad-wrapper-block
           newsletter=newsletter
           promotion-component="advertisement-block"
-          placement-id=get(nativeX, `placements.${newsletter.alias}.slot-1`)
+          placement-id=nativeX.getPlacement({ name: 'slot-1', aliases: [newsletter.alias] }).id
           date=date
         />
 
