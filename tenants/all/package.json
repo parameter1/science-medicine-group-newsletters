@@ -6,10 +6,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "basecms-newsletters dev index.js",
-    "compile": "basecms-marko-compile compile --dir ./ --silent true",
-    "lint": "eslint --ext .js --max-warnings 5 ./",
-    "test": "yarn lint && yarn compile"
+    "build": "yarn compile",
+    "dev": "basecms-newsletters dev --compile-dir ../../packages --watch-dir ../../packages",
+    "compile": "basecms-marko-compile compile",
+    "lint": "eslint --ext .js --max-warnings 5 --config ../../.eslintrc.js --ignore-path ../../.eslintignore ./",
+    "lint:fix": "yarn lint --fix",
+    "test": "yarn lint && yarn compile --no-clean"
   },
   "dependencies": {
     "@parameter1/base-cms-marko-core": "^4.36.0",
