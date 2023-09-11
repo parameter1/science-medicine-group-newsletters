@@ -28,5 +28,22 @@ module.exports = {
     'drb-case-of-the-week': {
       'case-sponsor': '642310db713241000128c421',
     },
+    'am-lfte': {
+      'slot-1': '647e1c415150cb0001181028',
+      'case-sponsor': '647e1c36989f4f0001733285',
+    },
+    'am-community-insider': {
+      community: '64ff4d1896af9a00016a8b4f',
+      'slot-1': '64ff4cfa96af9a00016a8b28',
+    },
+    'am-breaking-news': {
+      'slot-1': '64ff4d3996af9a00016a8bc6',
+    },
+    'am-case-of-the-week': {
+      'case-sponsor': '64ff4c99fd16dd000159e4b7',
+    },
+    'am-radcast': {
+      'slot-1': '64ff595396af9a00016aa6d4',
+    },
   },
 };

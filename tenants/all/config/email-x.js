@@ -97,6 +97,46 @@ config
       height: 250,
     },
   ])
+  .setAdUnits('am-lfte', [
+    {
+      name: 'ad-slot-1',
+      id: '647e1b53f89e58ac004ca4f7',
+      width: 300,
+      height: 250,
+    },
+  ])
+  .setAdUnits('am-community-insider', [
+    {
+      name: 'ad-slot-1',
+      id: '64ff47f8c6835cc9a256a2a0',
+      width: 300,
+      height: 250,
+    },
+  ])
+  .setAdUnits('am-breaking-news', [
+    {
+      name: 'ad-slot-1',
+      id: '64ff4833d423c961b2f13e27',
+      width: 300,
+      height: 250,
+    },
+  ])
+  .setAdUnits('am-case-of-the-week', [
+    {
+      name: 'ad-slot-1',
+      id: '64ff4859c6835c815256a320',
+      width: 300,
+      height: 250,
+    },
+  ])
+  .setAdUnits('am-radcast', [
+    {
+      name: 'ad-slot-1',
+      id: '64ff5929d423c90e3af13ebf',
+      width: 300,
+      height: 250,
+    },
+  ])
   .setAdUnits('sab', [
     {
       name: 'ad-slot-1',
