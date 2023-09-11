@@ -10,5 +10,8 @@
   },
   "<common-case-layout>": {
     "template": "./case.marko"
+  },
+  "<common-radcast-layout>": {
+    "template": "./radcast.marko"
   }
 }
