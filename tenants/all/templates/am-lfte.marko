@@ -19,7 +19,7 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
     type: 'Case',
     shortName: node.name,
     teaser: node.description,
-    siteContext: { url: `https://my.drbicuspid.com/cases/${node.url}` },
+    siteContext: { url: `https://my.auntminnie.com/cases/${node.url}` },
     primaryImage: { src: node.imagepath }
   })));
 
@@ -124,11 +124,11 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           />
 
           <common-external-api-block
-            api-url="https://my.drbicuspid.com/wp-json/mo/v1/getCase/3"
+            api-url="https://my.auntminnie.com/wp-json/mo/v1/getCase/3"
             resolved-to-nodes-converter=resolvedToNodesConverter
             name="Case of the Week"
             description="Check out our Case of the Week!"
-            button={ link: "https://my.drbicuspid.com/cases", text: "View All Cases" }
+            button={ link: "https://my.auntminnie.com/cases", text: "View All Cases" }
             cta-link-style=ctaLinkStyle
           />
         </if>

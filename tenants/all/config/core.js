@@ -84,6 +84,52 @@ const config = {
     },
     preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
   },
+  'am-lfte': {
+    ...brands.am,
+    name: 'AuntMinnie-Letter From The Editor',
+    logo: {
+      src: '/files/base/smg/all/image/static/am/auntminnie-LFTE.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+    caseBlock: true,
+  },
+  'am-breaking-news': {
+    ...brands.am,
+    name: 'AuntMinnie-Breaking News',
+    logo: {
+      src: '/files/base/smg/all/image/static/am/auntminnie-Breaking-News.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+  },
+  'am-community-insider': {
+    ...brands.am,
+    name: 'AuntMinnie-Community Insider',
+    logo: {
+      src: '/files/base/smg/all/image/static/am/auntminnie-Insider.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+  },
+  'am-case-of-the-week': {
+    ...brands.am,
+    name: 'AuntMinnie-Case of the Week',
+    logo: {
+      src: '/files/base/smg/all/image/static/drb/DrB_EmailHeader_CaseOfTheWeek_v3.jpg',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+  },
+  'am-radcast': {
+    ...brands.am,
+    name: 'AuntMinnie-Radcast',
+    logo: {
+      src: '/files/base/smg/all/image/static/am/auntminnie-Radcast.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+  },
 };
 
 module.exports = config;
