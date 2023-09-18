@@ -69,7 +69,7 @@ const config = {
     ...brands.drb,
     name: 'Dr. Bicuspid-Case of the Week',
     logo: {
-      src: '/files/base/smg/all/image/static/drb/DrB_EmailHeader_CaseOfTheWeek_v3.jpg',
+      src: '/files/base/smg/all/image/static/drb/Dr.Biscuspid-case.png',
       footerWidth: 200,
     },
     preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
@@ -116,7 +116,7 @@ const config = {
     ...brands.am,
     name: 'AuntMinnie-Case of the Week',
     logo: {
-      src: '/files/base/smg/all/image/static/drb/DrB_EmailHeader_CaseOfTheWeek_v3.jpg',
+      src: '/files/base/smg/all/image/static/am/auntminnie-case.png',
       footerWidth: 200,
     },
     preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
