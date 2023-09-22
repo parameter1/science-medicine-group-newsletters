@@ -4,6 +4,7 @@ import queryFragment from "@science-medicine-group/package-common/graphql/fragme
 
 $ const { website, config, req } = out.global;
 $ const { newsletter, date } = input.data;
+$ const displayLimit = input.displayLimit || 10;
 
 $ const emailX = config.get("emailX");
 $ const nativeX = config.getAsObject("nativeX");
@@ -85,7 +86,7 @@ $ const nativeX = config.getAsObject("nativeX");
           newsletter=newsletter
           with-image=false
           with-section=true
-          limit=5
+          limit=(displayLimit - 5)
           skip=4
         />
 
