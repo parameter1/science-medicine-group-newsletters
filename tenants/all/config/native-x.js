@@ -1,5 +1,5 @@
 module.exports = {
-  uri: 'https://smg.native-x.parameter1.com/email-placement',
+  uri: 'https://delivery.mindfulcms.com/smg/default/compat/native-email/email-placement',
   placements: {
     'labpulse-lfte': {
       'slot-1': '632b0922e063f70001d48fc8',
