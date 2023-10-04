@@ -1,5 +1,6 @@
 module.exports = {
   labPulse: {
+    publicationName: 'https://LabPulse.com',
     socialMedia: {
       imagePath: '/files/base/smg/all/image/static/newsletter',
       links: [
@@ -10,6 +11,7 @@ module.exports = {
     },
   },
   drb: {
+    publicationName: 'https://DrBicuspid.com',
     socialMedia: {
       imagePath: '/files/base/smg/all/image/static/newsletter',
       links: [
@@ -21,6 +23,7 @@ module.exports = {
     },
   },
   am: {
+    publicationName: 'https://AuntMinnie.com',
     socialMedia: {
       imagePath: '/files/base/smg/all/image/static/newsletter',
       links: [
