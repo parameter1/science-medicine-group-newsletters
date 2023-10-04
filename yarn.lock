@@ -1058,10 +1058,10 @@
   dependencies:
     "@parameter1/base-cms-object-path" "^4.5.12"
 
-"@parameter1/base-cms-marko-web-gtm@^4.38.1":
-  version "4.38.1"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-gtm/-/base-cms-marko-web-gtm-4.38.1.tgz#a70d7717578a1f9899de8265eecee6a4d9152ee0"
-  integrity sha512-QdOQHmcV3O0onuPh2yNcvZ5bOcz9JvShmDu8CH5CAJeNev9eBBUSaSBtDQyhhBv84e6zYBBKozJZ4LIeMS7ZYg==
+"@parameter1/base-cms-marko-web-gtm@^4.17.1":
+  version "4.17.1"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-gtm/-/base-cms-marko-web-gtm-4.17.1.tgz#15e4fa00148487f83573b576d779b2d8a3dca31f"
+  integrity sha512-OQRrkg1cbBn8WqzSj+fyuapYCEgRgBgIe9fZOadY9P4nKg3sn5TpNQZiOuxRQmvoHLxj/UDdUkXYlwfRrOWNTA==
   dependencies:
     "@parameter1/base-cms-inflector" "^4.5.12"
     "@parameter1/base-cms-marko-web-deferred-script-loader" "^4.5.12"
@@ -1070,13 +1070,13 @@
     graphql "^14.7.0"
     graphql-tag "^2.12.6"
 
-"@parameter1/base-cms-marko-web-native-x@^4.38.1":
-  version "4.38.1"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-native-x/-/base-cms-marko-web-native-x-4.38.1.tgz#9f602daca09ed37de7ff2ecf56612ecdbd368a13"
-  integrity sha512-CST/Lm34SLynZxvCBKP1tsUvptMHxTGCCFsKHnLZuZtnjdaIk6rZUmRQVf51OtswLmoZQnnu6hV6nKLiL5FcDQ==
+"@parameter1/base-cms-marko-web-native-x@^4.36.0":
+  version "4.36.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-native-x/-/base-cms-marko-web-native-x-4.36.0.tgz#f3ea332b5d9d20c184aa7caa7b1c2b6457990fa4"
+  integrity sha512-M/54B147xedVsTx5ccN5wnB53kK3T+zw+BqBdPs4Of+MSqXYqldapT+OrmvyNhhWIXbm9Iyb4wg/m7ZKhEMrNA==
   dependencies:
     "@parameter1/base-cms-marko-web-deferred-script-loader" "^4.5.12"
-    "@parameter1/base-cms-marko-web-gtm" "^4.38.1"
+    "@parameter1/base-cms-marko-web-gtm" "^4.17.1"
     "@parameter1/base-cms-object-path" "^4.5.12"
     "@parameter1/base-cms-utils" "^4.5.12"
     "@parameter1/base-cms-web-common" "^4.36.0"
