@@ -8,7 +8,7 @@ $ const { newsletter } = input;
 $ const newsletterConfig = config.get(newsletter.alias);
 $ const tagline = get(newsletterConfig, "tagline");
 $ const subscribeLink = get(newsletterConfig, "subscribeLink");
-$ const publicationName = website.get("name");
+$ const publicationName = get(newsletterConfig, "publicationName");
 $ const footerWidth = defaultValue(get(newsletterConfig, "logo.footerWidth"), 130);
 $ const url = buildLinkUrl(website.get("origin"));
 $ const logoFooterSrc = newsletterConfig.logo.footerSrc;
@@ -171,7 +171,7 @@ $ const stealthLinkStyle = {
 
                 <tr>
                   <td align="left" valign="top" style=standardStyle>
-                    You are receiving this email because you subscribed to receive relevant news from ${publicationName}. To update your email subscriptions, visit ${publicationName}'s <a href=preferenceCenterUrl style=linkStyle>preference center</a>.
+                    You are receiving this email because you subscribed to receive relevant news from <a href=publicationName style=linkStyle>${publicationName}</a>. To update your email subscriptions or to unsubscribe, visit <a href=publicationName style=linkStyle>${publicationName}'s </a> <a href=preferenceCenterUrl style=linkStyle>preference center</a>.
                   </td>
                 </tr>
                 <common-table-spacer-element height="19" />
