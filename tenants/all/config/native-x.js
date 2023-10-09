@@ -11,6 +11,9 @@ module.exports = {
     'labpulse-breaking-news': {
       'slot-1': '6406aca393fb8e0001c3ac2a',
     },
+    'labpulse-senl': {
+      'slot-1': '652352981449000001cb3e63',
+    },
     'drb-lfte': {
       'slot-1': '638619dad6ced5000110a551',
       'case-sponsor': '643d7f61b91bf50001eff980',
@@ -22,11 +25,11 @@ module.exports = {
     'drb-breaking-news': {
       'slot-1': '6406ad19e78b060001976ca1',
     },
-    sab: {
-      'slot-1': '63861a1cadecb1000112fe8b',
-    },
     'drb-case-of-the-week': {
       'case-sponsor': '642310db713241000128c421',
+    },
+    'drb-senl': {
+      'slot-1': '6523526e1449000001cb3e32',
     },
     'am-lfte': {
       'slot-1': '647e1c415150cb0001181028',
@@ -44,6 +47,15 @@ module.exports = {
     },
     'am-radcast': {
       'slot-1': '64ff595396af9a00016aa6d4',
+    },
+    'am-senl': {
+      'slot-1': '652352441449000001cb3e0b',
+    },
+    sab: {
+      'slot-1': '63861a1cadecb1000112fe8b',
+    },
+    'ame-senl': {
+      'slot-1': '652352cd1449000001cb3ea4',
     },
   },
 };
