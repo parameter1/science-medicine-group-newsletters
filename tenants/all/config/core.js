@@ -37,6 +37,15 @@ const config = {
     },
     preferenceCenter: 'https://www.labpulse.com/user/subscribe',
   },
+  'labpulse-senl': {
+    ...brands.labPulse,
+    name: 'labpulse-SENL',
+    logo: {
+      src: '/files/base/smg/all/image/static/lab/Labpulse-SpecialEditionNewsletter.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.labpulse.com/user/subscribe',
+  },
   'drb-lfte': {
     ...brands.drb,
     name: 'Dr. Bicuspid-Letter From The Editor',
@@ -80,6 +89,15 @@ const config = {
     logo: {
       src: '/files/base/smg/all/image/static/drb/DrB_EmailHeader_Sample_v3.jpg',
       footerSrc: '/files/base/smg/all/image/static/drb/DrBLogo_WhiteText.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
+  },
+  'drb-senl': {
+    ...brands.drb,
+    name: 'DrBicuspid-SENL',
+    logo: {
+      src: '/files/base/smg/all/image/static/drb/DrBiscuspid-SpecialEditionNewsletter.png',
       footerWidth: 200,
     },
     preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
@@ -129,6 +147,24 @@ const config = {
       footerWidth: 200,
     },
     preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+  },
+  'am-senl': {
+    ...brands.am,
+    name: 'AuntMinnie-SENL',
+    logo: {
+      src: '/files/base/smg/all/image/static/am/auntminnie-SpecialEditionNewsletter.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+  },
+  'ame-senl': {
+    ...brands.ame,
+    name: 'AuntMinnieEurope-SENL',
+    logo: {
+      src: '/files/base/smg/all/image/static/ame/AME-SpecialEditionNewsletter.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnieeurope.com/user/subscribe',
   },
 };
 
