@@ -32,6 +32,16 @@ module.exports = {
       ],
     },
   },
+  ame: {
+    publicationName: 'https://AuntMinnieEurope.com',
+    socialMedia: {
+      imagePath: '/files/base/smg/all/image/static/newsletter',
+      links: [
+        { provider: 'facebook', href: 'https://www.facebook.com/auntminnie.radiology', target: '_blank' },
+        { provider: 'twitter', href: 'https://twitter.com/AuntMinnie', target: '_blank' },
+      ],
+    },
+  },
   sab: {
     logo: {
       src: '/files/base/smg/all/image/static/sab/sab-logo.svg',
