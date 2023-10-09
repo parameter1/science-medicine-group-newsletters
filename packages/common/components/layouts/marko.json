@@ -13,5 +13,8 @@
   },
   "<common-radcast-layout>": {
     "template": "./radcast.marko"
+  },
+  "<common-senl-layout>": {
+    "template": "./senl.marko"
   }
 }
