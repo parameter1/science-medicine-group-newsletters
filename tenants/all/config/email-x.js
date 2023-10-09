@@ -27,6 +27,14 @@ config
       height: 250,
     },
   ])
+  .setAdUnits('labpulse-senl', [
+    {
+      name: 'ad-slot-1',
+      id: '6523478bd423c99fb0f1701a',
+      width: 300,
+      height: 250,
+    },
+  ])
   .setAdUnits('drb-lfte', [
     {
       name: 'ad-slot-1',
@@ -97,6 +105,14 @@ config
       height: 250,
     },
   ])
+  .setAdUnits('drb-senl', [
+    {
+      name: 'ad-slot-1',
+      id: '652347b9d423c9192ef17048',
+      width: 300,
+      height: 250,
+    },
+  ])
   .setAdUnits('am-lfte', [
     {
       name: 'ad-slot-1',
@@ -137,10 +153,26 @@ config
       height: 250,
     },
   ])
+  .setAdUnits('am-senl', [
+    {
+      name: 'ad-slot-1',
+      id: '652347e6c6835c370c56d52f',
+      width: 300,
+      height: 250,
+    },
+  ])
   .setAdUnits('sab', [
     {
       name: 'ad-slot-1',
       id: '638616fd58002a6962708cd2',
+      width: 300,
+      height: 250,
+    },
+  ])
+  .setAdUnits('ame-senl', [
+    {
+      name: 'ad-slot-1',
+      id: '6523481fc6835ca12556d55d',
       width: 300,
       height: 250,
     },
