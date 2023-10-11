@@ -1,6 +1,6 @@
 module.exports = {
   labPulse: {
-    publicationName: 'https://LabPulse.com',
+    publicationName: 'LabPulse.com',
     socialMedia: {
       imagePath: '/files/base/smg/all/image/static/newsletter',
       links: [
@@ -11,7 +11,7 @@ module.exports = {
     },
   },
   drb: {
-    publicationName: 'https://DrBicuspid.com',
+    publicationName: 'DrBicuspid.com',
     socialMedia: {
       imagePath: '/files/base/smg/all/image/static/newsletter',
       links: [
@@ -23,7 +23,7 @@ module.exports = {
     },
   },
   am: {
-    publicationName: 'https://AuntMinnie.com',
+    publicationName: 'AuntMinnie.com',
     socialMedia: {
       imagePath: '/files/base/smg/all/image/static/newsletter',
       links: [
@@ -33,7 +33,7 @@ module.exports = {
     },
   },
   ame: {
-    publicationName: 'https://AuntMinnieEurope.com',
+    publicationName: 'AuntMinnieEurope.com',
     socialMedia: {
       imagePath: '/files/base/smg/all/image/static/newsletter',
       links: [
