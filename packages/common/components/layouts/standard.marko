@@ -123,6 +123,18 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           />
         </if>
 
+        <!-- Content list block -->
+        <common-content-list-block
+          date=date
+          section-name="In Case You Missed It"
+          newsletter=newsletter
+          with-image=true
+          image-position="right"
+          with-header=true
+          continue-reading=false
+          limit=5
+        />
+
       </@body>
     </common-body-wrapper-block>
   </@body>
