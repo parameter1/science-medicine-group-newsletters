@@ -11,6 +11,7 @@ $ const imagePosition = defaultValue(input.imagePosition, 'right');
 $ const withHeader = defaultValue(input.withHeader, false);
 $ const withSection = defaultValue(input.withSection, false);
 $ const continueReading = defaultValue(input.continueReading, false);
+$ const headerBackground = defaultValue(input.headerBackground, false);
 
 $ const newsletterConfig = config.get(newsletter.alias);
 
@@ -28,7 +29,7 @@ $ const queryParams = {
 <marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
   <if(nodes.length)>
     <if(withHeader)>
-      <common-list-header-element title=sectionName />
+      <common-list-header-element title=sectionName header-background=headerBackground />
     </if>
     <for|content| of=nodes>
       <common-content-list-item-block
