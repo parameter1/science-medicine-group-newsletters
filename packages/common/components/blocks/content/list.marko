@@ -4,7 +4,7 @@ import queryFragment from "@science-medicine-group/package-common/graphql/fragme
 
 $ const { config } = out.global;
 
-$ const { sectionName, date, newsletter } = input;
+$ const { headerBackgroundColor, sectionName, date, newsletter } = input;
 
 $ const withImage = defaultValue(input.withImage, true);
 $ const imagePosition = defaultValue(input.imagePosition, 'right');
@@ -28,7 +28,7 @@ $ const queryParams = {
 <marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
   <if(nodes.length)>
     <if(withHeader)>
-      <common-list-header-element title=sectionName />
+      <common-list-header-element title=sectionName header-background-color=headerBackgroundColor />
     </if>
     <for|content| of=nodes>
       <common-content-list-item-block
