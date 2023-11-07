@@ -57,5 +57,22 @@ module.exports = {
     'ame-senl': {
       'slot-1': '652352cd1449000001cb3ea4',
     },
+    'ame-lfte': {
+      'slot-1': '654946b991f3fc0001ea8fb2',
+      'case-sponsor': '654946d87493750001592a30',
+    },
+    'ame-community-insider': {
+      community: '654947007493750001592a69',
+      'slot-1': '6549470d7493750001592a85',
+    },
+    'ame-breaking-news': {
+      'slot-1': '654947227493750001592abb',
+    },
+    'ame-case-of-the-week': {
+      'case-sponsor': '654947497493750001592ad9',
+    },
+    'ame-radcast': {
+      'slot-1': '6549475a91f3fc0001ea907c',
+    },
   },
 };
