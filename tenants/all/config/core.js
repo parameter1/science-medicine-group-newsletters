@@ -166,6 +166,51 @@ const config = {
     },
     preferenceCenter: 'https://www.auntminnieeurope.com/user/subscribe',
   },
+  'ame-breaking-news': {
+    ...brands.ame,
+    name: 'AuntMinnieEurope-Breaking News',
+    logo: {
+      src: '/files/base/smg/all/image/static/ame/AuntMinnieEurope-BreakingNews.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnieeurope.com/user/subscribe',
+  },
+  'ame-case-of-the-week': {
+    ...brands.ame,
+    name: 'AuntMinnieEurope-Case of the Week',
+    logo: {
+      src: '/files/base/smg/all/image/static/ame/AuntMinnieEurope-weekly.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnieeurope.com/user/subscribe',
+  },
+  'ame-community-insider': {
+    ...brands.ame,
+    name: 'AuntMinnieEurope-Community Insider',
+    logo: {
+      src: '/files/base/smg/all/image/static/ame/AuntMinnieEurope-Insider.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnieeurope.com/user/subscribe',
+  },
+  'ame-lfte': {
+    ...brands.ame,
+    name: 'AuntMinnieEurope-LFTE',
+    logo: {
+      src: '/files/base/smg/all/image/static/ame/AuntMinnieEurope-LFTE.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnieeurope.com/user/subscribe',
+  },
+  'ame-radcast': {
+    ...brands.ame,
+    name: 'AuntMinnieEurope-Radcast',
+    logo: {
+      src: '/files/base/smg/all/image/static/ame/AuntMinnieEurope-Radcast.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnieeurope.com/user/subscribe',
+  },
 };
 
 module.exports = config;
