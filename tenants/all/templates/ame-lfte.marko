@@ -1,0 +1,151 @@
+import { get } from "@parameter1/base-cms-object-path";
+import { parseBooleanHeader } from "@parameter1/base-cms-utils";
+import queryFragment from "@science-medicine-group/package-common/graphql/fragments/content-list";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+
+$ const { website, config, req } = out.global;
+$ const { newsletter, date } = data;
+
+$ const emailX = config.get("emailX");
+$ const nativeX = config.getAsObject("nativeX");
+$ const { id, alias, name, pageNode } = input;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const caseBlock = get(newsletterConfig, "caseBlock");
+$ const ctaLinkStyle = defaultValue(newsletterConfig.ctaLinkStyle, undefined);
+
+$ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
+    id: node.ID,
+    type: 'Case',
+    shortName: node.name,
+    teaser: node.description,
+    siteContext: { url: `https://my.auntminnie.com/cases/${node.url}` },
+    primaryImage: { src: node.imagepath }
+  })));
+
+<marko-newsletter-root
+  title=newsletter.name
+  description=newsletter.description
+  date=date
+>
+  <@head>
+    <common-head-block />
+  </@head>
+  <@body style="padding:0; margin:0;font-family: 'Roboto', Arial, sans-serif; -webkit-text-size-adjust:100%;">
+    <common-body-wrapper-block newsletter=newsletter date=date>
+      <@body>
+
+        <!-- Content list block -->
+        <common-content-list-block
+          date=date
+          section-name="Editor's Note"
+          newsletter=newsletter
+          with-image=true
+          image-position="right"
+          with-header=true
+          continue-reading=true
+          limit=1
+        />
+
+        <common-content-list-block
+          date=date
+          section-name="Main"
+          newsletter=newsletter
+          with-image=true
+          image-position="right"
+          with-section=true
+          limit=1
+          skip=0
+        />
+
+        <!-- Content list block -->
+        <common-content-list-block
+          date=date
+          section-name="Main"
+          newsletter=newsletter
+          with-image=false
+          with-section=true
+          limit=1
+          skip=1
+        />
+
+        <common-content-list-block
+          date=date
+          section-name="Main"
+          newsletter=newsletter
+          with-image=true
+          image-position="right"
+          with-section=true
+          limit=1
+          skip=2
+        />
+
+        <!-- Ad Slot 1 -->
+        <common-ad-wrapper-block
+          newsletter=newsletter
+          promotion-component="advertisement-block"
+          ad-unit=emailX.getAdUnit({ name: 'ad-slot-1', alias: newsletter.alias })
+          placement-id=get(nativeX, `placements.${newsletter.alias}.slot-1`)
+          date=date
+        />
+
+        <!-- Content list block -->
+        <common-content-list-block
+          date=date
+          section-name="Main"
+          newsletter=newsletter
+          with-image=false
+          with-section=true
+          skip=3
+          limit=42
+        />
+
+        <if(caseBlock === true)>
+          <tr>
+            <td align="center" valign="top">
+              <table role="presentation" width="100%" border="0" align="center"  cellpadding="0" cellspacing="0" style="background: #eff1f3;">
+                <tr>
+                  <td align="center" valign="middle" height="38">
+                    <p style="font-size:15px;color: #000000;text-decoration: none;display: block;font-weight:700;font-family:'Roboto', Arial, sans-serif;text-transform: uppercase;padding: 0 24px;">
+                      Case of the Week
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <common-table-spacer-element height="24" />
+
+          <common-ad-wrapper-block
+            date=date
+            newsletter=newsletter
+            promotion-component="case-native-block"
+            placement-id=get(nativeX, `placements.${newsletter.alias}.case-sponsor`)
+          />
+
+          <common-external-api-block
+            api-url="https://my.auntminnie.com/wp-json/mo/v1/getCase/3"
+            resolved-to-nodes-converter=resolvedToNodesConverter
+            name="Case of the Week"
+            description="Check out our Case of the Week!"
+            button={ link: "https://my.auntminnie.com/cases", text: "View All Cases" }
+            cta-link-style=ctaLinkStyle
+          />
+        </if>
+
+        <!-- Content list block -->
+        <common-content-list-block
+          date=date
+          section-name="In Case You Missed It"
+          newsletter=newsletter
+          with-image=true
+          image-position="right"
+          with-header=true
+          continue-reading=false
+          limit=5
+        />
+
+      </@body>
+    </common-body-wrapper-block>
+  </@body>
+</marko-newsletter-root>

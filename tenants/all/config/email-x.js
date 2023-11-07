@@ -176,6 +176,46 @@ config
       width: 300,
       height: 250,
     },
+  ])
+  .setAdUnits('ame-lfte', [
+    {
+      name: 'ad-slot-1',
+      id: '65493d957ed285419964a0e7',
+      width: 300,
+      height: 250,
+    },
+  ])
+  .setAdUnits('ame-community-insider', [
+    {
+      name: 'ad-slot-1',
+      id: '65493dc45df77b42a6a1f8b9',
+      width: 300,
+      height: 250,
+    },
+  ])
+  .setAdUnits('ame-breaking-news', [
+    {
+      name: 'ad-slot-1',
+      id: '65493de57ed2853fea64a14b',
+      width: 300,
+      height: 250,
+    },
+  ])
+  .setAdUnits('ame-case-of-the-week', [
+    {
+      name: 'ad-slot-1',
+      id: '654945655df77b23f9a1f91d',
+      width: 300,
+      height: 250,
+    },
+  ])
+  .setAdUnits('ame-radcast', [
+    {
+      name: 'ad-slot-1',
+      id: '6549457f7ed285655364a1b8',
+      width: 300,
+      height: 250,
+    },
   ]);
 
 module.exports = config;
