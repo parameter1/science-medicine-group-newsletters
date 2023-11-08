@@ -157,6 +157,24 @@ const config = {
     },
     preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
   },
+  'am-rsna': {
+    ...brands.am,
+    name: 'AuntMinnie-RSNA',
+    logo: {
+      src: '/files/base/smg/all/image/static/am/AM__RSNA__header.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+  },
+  'am-rsna-preview': {
+    ...brands.am,
+    name: 'AuntMinnie-RSNA Preview',
+    logo: {
+      src: '/files/base/smg/all/image/static/am/AM__RSNA_Preview_header.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+  },
   'ame-senl': {
     ...brands.ame,
     name: 'AuntMinnieEurope-SENL',

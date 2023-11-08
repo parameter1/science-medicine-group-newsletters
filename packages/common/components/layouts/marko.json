@@ -16,5 +16,8 @@
   },
   "<common-senl-layout>": {
     "template": "./senl.marko"
+  },
+  "<common-rsna-layout>": {
+    "template": "./rsna.marko"
   }
 }

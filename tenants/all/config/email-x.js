@@ -161,6 +161,22 @@ config
       height: 250,
     },
   ])
+  .setAdUnits('am-rsna', [
+    {
+      name: 'ad-slot-1',
+      id: '654bbc997ed2851ec164a656',
+      width: 300,
+      height: 250,
+    },
+  ])
+  .setAdUnits('am-rsna-preview', [
+    {
+      name: 'ad-slot-1',
+      id: '654bbcb87ed28543e664a684',
+      width: 300,
+      height: 250,
+    },
+  ])
   .setAdUnits('sab', [
     {
       name: 'ad-slot-1',
