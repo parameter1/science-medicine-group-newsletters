@@ -33,5 +33,16 @@
   },
   "<common-table-spacer-element>": {
     "template": "./table-spacer.marko"
+  },
+  "<common-stealth-link-element>": {
+    "template": "./stealth-link.marko",
+    "@link-text": {
+      "type": "string",
+      "required": true
+    },
+    "@link-url": {
+      "type": "string",
+      "required": true
+    }
   }
 }
