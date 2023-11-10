@@ -2,8 +2,6 @@ import moment from "moment";
 
 $ const { newsletter, date } = input;
 
-$ console.log(newsletter);
-
 $ const unixTimestamp = moment(date).unix();
 $ const stealthLinkUrl = `${newsletter.site.origin}/email-preview/${newsletter.id}/${unixTimestamp}`;
 
