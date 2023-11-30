@@ -143,7 +143,7 @@ const config = {
     ...brands.am,
     name: 'AuntMinnie-Radcast',
     logo: {
-      src: '/files/base/smg/all/image/static/am/auntminnie-Radcast.png',
+      src: '/files/base/smg/all/image/static/am/AM__RADCast.png',
       footerWidth: 200,
     },
     preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
@@ -161,7 +161,7 @@ const config = {
     ...brands.am,
     name: 'AuntMinnie-RSNA',
     logo: {
-      src: '/files/base/smg/all/image/static/am/AM__RSNA__header.png',
+      src: '/files/base/smg/all/image/static/am/AM__RADCast.png',
       footerWidth: 200,
     },
     preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
