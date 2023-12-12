@@ -25,6 +25,18 @@ $ const { id, alias, name, pageNode } = input;
         <!-- Content list block -->
         <common-content-list-block
           date=date
+          section-name="Editor's Note"
+          newsletter=newsletter
+          with-image=true
+          image-position="right"
+          with-header=true
+          continue-reading=true
+          limit=1
+        />
+
+        <!-- Content list block -->
+        <common-content-list-block
+          date=date
           section-name="Main"
           newsletter=newsletter
           with-image=true
@@ -62,18 +74,6 @@ $ const { id, alias, name, pageNode } = input;
           with-section=true
           skip=2
           limit=98
-        />
-
-        <!-- Content list block -->
-        <common-content-list-block
-          date=date
-          section-name="Editor's Note"
-          newsletter=newsletter
-          with-image=true
-          image-position="right"
-          with-header=true
-          continue-reading=true
-          limit=1
         />
 
       </@body>
