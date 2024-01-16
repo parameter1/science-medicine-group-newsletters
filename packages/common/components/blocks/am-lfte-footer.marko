@@ -1,0 +1,178 @@
+import { get, getAsObject, getAsArray } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
+
+$ const { website, config } = out.global;
+$ const { newsletter } = input;
+
+$ const newsletterConfig = config.get(newsletter.alias);
+$ const tagline = get(newsletterConfig, "tagline");
+$ const subscribeLink = get(newsletterConfig, "subscribeLink");
+$ const publicationName = get(newsletterConfig, "publicationName");
+$ const footerWidth = defaultValue(get(newsletterConfig, "logo.footerWidth"), 130);
+$ const url = buildLinkUrl(website.get("origin"));
+$ const logoFooterSrc = newsletterConfig.logo.footerSrc;
+$ const alt = defaultValue(input.alt, newsletter.name);
+
+$ const preferenceCenterUrl = buildLinkUrl(
+  get(newsletterConfig, "preferenceCenter"),
+  { email: '{{${email_address} | url_encode }}&id={{${user_id}}}&subtitle=AuntMinnie%20Daily%20Newsletter&subID=6bbda052-75b3-4c48-bbbe-a943a1b7beac&subFlag=0&mode=edit' }
+);
+
+$ const standardStyle = {
+  "font-size": "17px",
+  "line-height": "22px",
+  "color": "#ffffff",
+  "font-family": "'Roboto', Arial, sans-serif",
+  "padding": "0 15px",
+};
+
+$ const linkStyle = {
+  ...standardStyle,
+  "padding": "none",
+  "text-decoration": "none!important"
+};
+
+$ const standardUnderlineStyle = {
+  ...standardStyle,
+  "text-decoration": "underline",
+  "padding": "0",
+};
+
+$ const smallerStyle = {
+  ...standardStyle,
+  "font-size": "15px",
+  "line-height": "20px",
+};
+
+$ const smallerUnderlineStyle = {
+  ...smallerStyle,
+  "line-height": "18px",
+  "text-decoration": "underline",
+  "padding": "0",
+};
+
+$ const taglineStyle = {
+  ...smallerStyle,
+  "font-style": "italic",
+  "padding-top": "5px",
+}
+
+$ const stealthLinkStyle = {
+  "color": "#ffffff",
+  "display": "none",
+  "visibility": "hidden",
+  "mso-hide": "all",
+  "font-size": "1px",
+  "line-height": "1px",
+  "max-height": "0px",
+  "max-width": "0px",
+  "opacity": "0",
+  "overflow": "hidden",
+}
+
+<tr>
+  <td align="center" valign="top">
+    <table role="presentation" width="100%" border="0" bgcolor="#2f3031" align="center"  cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" valign="top">
+          <table role="presentation" width="610" border="0" align="center"  cellpadding="0" cellspacing="0" class="wrap003">
+            <tbody>
+                <common-table-spacer-element height="18" />
+                <tr>
+                  <td align="center" valign="top">
+                    <if(logoFooterSrc)>
+                      <marko-newsletter-imgix
+                        src=logoFooterSrc
+                        alt=alt
+                        options={ w: 200 }
+                        attrs={ width: 200 }
+                      >
+                        <@link href=url target="_blank" />
+                      </marko-newsletter-imgix>
+                    </if>
+                    <else>
+                      <common-logo-element newsletter=newsletter alt=publicationName width=footerWidth />
+                    </else>
+                  </td>
+                </tr>
+                <if(tagline)>
+                  <tr>
+                    <td align="center" valign="top" style=taglineStyle>${tagline}</td>
+                  </tr>
+                </if>
+                <common-table-spacer-element height="20" />
+
+                $ const socialMedia = get(newsletterConfig, "socialMedia");
+                $ const socialMediaLinks = getAsArray(socialMedia, "links");
+                <if(socialMediaLinks.length)>
+                  <tr>
+                    <td align="center" valign="top" >
+                      <table role="presentation" width="200" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <for|link| of=socialMediaLinks>
+                              <td align="center" valign="middle" style="padding: 0 10px;">
+                                <marko-newsletter-imgix
+                                  src=`${socialMedia.imagePath}/${link.provider}.png`
+                                  alt=link.provider
+                                  options={ w: 32, h: 32 }
+                                  class="img_resize1"
+                                  attrs={ border: 0, width: 32, align: "center" }
+                                >
+                                  <@link href=link.href target="_blank" />
+                                </marko-newsletter-imgix>
+                              </td>
+                            </for>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <common-table-spacer-element height="16" />
+                </if>
+
+                $ const contactLinks = getAsArray(newsletterConfig, "contactLinks");
+                <if(contactLinks.length)>
+                  <tr>
+                    <td align="left" valign="top" style=standardStyle>
+                      Contact
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top" style=standardStyle>
+                      <for|link, index| of=contactLinks>
+                        <a href=buildLinkUrl(link.href) style=standardUnderlineStyle>
+                          ${link.label}
+                        </a>
+                        <if(index < (contactLinks.length - 1))>
+                          <span style="padding: 0 10px;">|</span>
+                        </if>
+                      </for>
+                    </td>
+                  </tr>
+                  <common-table-spacer-element height="21" />
+                </if>
+
+                <tr>
+                  <td align="left" valign="top" style=standardStyle>
+                    <span style="font-size:17px;line-height:22px;color:#ffffff;font-family:'Roboto', Arial, sans-serif;padding:none;">
+                      You are receiving this email because you subscribed to receive relevant news from AuntMinnie.com.
+                      <a href=preferenceCenterUrl style="color:#ffffff;font-family:'Roboto', Arial, sans-serif;padding:none; text-decoration:underline!important;">Click here to unsubscribe</a>.
+                    </span>
+                  </td>
+                </tr>
+                <common-table-spacer-element height="19" />
+                <tr>
+                  <td align="left" valign="top" style=smallerStyle>
+                    &copy; ${(new Date()).getFullYear()} All rights reserved. | Science and Medicine Group<br/>671 N Glebe Road, Suite #1610, Arlington, VA 22203 USA
+                  </td>
+                </tr>
+                <common-table-spacer-element height="22" />
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
