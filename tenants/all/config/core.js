@@ -109,7 +109,7 @@ const config = {
       src: '/files/base/smg/all/image/static/am/auntminnie-LFTE.png',
       footerWidth: 200,
     },
-    preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+    preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
     caseBlock: true,
   },
   'am-breaking-news': {
