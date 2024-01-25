@@ -20,8 +20,5 @@
   },
   "<common-external-api-block>": {
     "template": "./external-api.marko"
-  },
-  "<common-am-lfte-footer-block>": {
-    "template": "am-lfte-footer.marko"
   }
 }
