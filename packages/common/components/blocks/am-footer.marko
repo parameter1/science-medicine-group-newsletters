@@ -9,6 +9,7 @@ $ const newsletterConfig = config.get(newsletter.alias);
 $ const tagline = get(newsletterConfig, "tagline");
 $ const subscribeLink = get(newsletterConfig, "subscribeLink");
 $ const subtitle = get(newsletterConfig, "subtitle");
+$ const subID = get(newsletterConfig, "subID");
 $ const publicationName = get(newsletterConfig, "publicationName");
 $ const footerWidth = defaultValue(get(newsletterConfig, "logo.footerWidth"), 130);
 $ const url = buildLinkUrl(website.get("origin"));
@@ -21,7 +22,7 @@ $ const preferenceCenterUrl = buildLinkUrl(
     email: '{{${email_address} | url_encode }}',
     id: '{{${user_id}}}',
     subtitle,
-    subID: '6bbda052-75b3-4c48-bbbe-a943a1b7beac',
+    subID,
     subFlag: '0',
     mode: 'edit',
   }
