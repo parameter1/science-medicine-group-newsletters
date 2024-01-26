@@ -110,6 +110,7 @@ const config = {
       footerWidth: 200,
     },
     preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
+    subtitle: 'AuntMinnie Daily Newsletter',
     caseBlock: true,
   },
   'am-breaking-news': {
@@ -119,7 +120,8 @@ const config = {
       src: '/files/base/smg/all/image/static/am/auntminnie-Breaking-News.png',
       footerWidth: 200,
     },
-    preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+    preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
+    subtitle: 'AuntMinnie Daily Newsletter',
   },
   'am-community-insider': {
     ...brands.am,
@@ -128,7 +130,8 @@ const config = {
       src: '/files/base/smg/all/image/static/am/auntminnie-Insider.png',
       footerWidth: 200,
     },
-    preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+    preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
+    subtitle: 'AuntMinnie Daily Newsletter',
   },
   'am-case-of-the-week': {
     ...brands.am,
@@ -137,7 +140,8 @@ const config = {
       src: '/files/base/smg/all/image/static/am/auntminnie-case.png',
       footerWidth: 200,
     },
-    preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+    preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
+    subtitle: 'AuntMinnie Daily Newsletter',
   },
   'am-radcast': {
     ...brands.am,
@@ -155,7 +159,8 @@ const config = {
       src: '/files/base/smg/all/image/static/am/auntminnie-SpecialEditionNewsletter.png',
       footerWidth: 200,
     },
-    preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+    preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
+    subtitle: 'AuntMinnie Daily Newsletter',
   },
   'am-rsna': {
     ...brands.am,
@@ -218,7 +223,8 @@ const config = {
       src: '/files/base/smg/all/image/static/ame/AuntMinnieEurope-LFTE.png',
       footerWidth: 200,
     },
-    preferenceCenter: 'https://www.auntminnieeurope.com/user/subscribe',
+    preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
+    subtitle: 'AuntMinnieEurope Daily Newsletter',
   },
   'ame-radcast': {
     ...brands.ame,
