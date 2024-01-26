@@ -111,6 +111,7 @@ const config = {
     },
     preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
     subtitle: 'AuntMinnie Daily Newsletter',
+    subID: '6bbda052-75b3-4c48-bbbe-a943a1b7beac',
     caseBlock: true,
   },
   'am-breaking-news': {
@@ -122,6 +123,7 @@ const config = {
     },
     preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
     subtitle: 'AuntMinnie Daily Newsletter',
+    subID: '6bbda052-75b3-4c48-bbbe-a943a1b7beac',
   },
   'am-community-insider': {
     ...brands.am,
@@ -132,6 +134,7 @@ const config = {
     },
     preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
     subtitle: 'AuntMinnie Daily Newsletter',
+    subID: '6bbda052-75b3-4c48-bbbe-a943a1b7beac',
   },
   'am-case-of-the-week': {
     ...brands.am,
@@ -142,6 +145,7 @@ const config = {
     },
     preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
     subtitle: 'AuntMinnie Daily Newsletter',
+    subID: '6bbda052-75b3-4c48-bbbe-a943a1b7beac',
   },
   'am-radcast': {
     ...brands.am,
@@ -161,6 +165,7 @@ const config = {
     },
     preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
     subtitle: 'AuntMinnie Daily Newsletter',
+    subID: '6bbda052-75b3-4c48-bbbe-a943a1b7beac',
   },
   'am-rsna': {
     ...brands.am,
@@ -225,6 +230,7 @@ const config = {
     },
     preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
     subtitle: 'AuntMinnieEurope Daily Newsletter',
+    subID: 'be37c68c-c7b7-491c-a8a5-b325026fc852',
   },
   'ame-radcast': {
     ...brands.ame,
