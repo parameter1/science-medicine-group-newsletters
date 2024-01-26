@@ -1,1 +1,7 @@
-<common-senl-layout data=data />
+$ const { newsletter } = data;
+
+<common-senl-layout data=data>
+  <@footer>
+    <common-am-footer-block newsletter=newsletter />
+  </@footer>
+</common-senl-layout>

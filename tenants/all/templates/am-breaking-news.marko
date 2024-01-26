@@ -1,1 +1,7 @@
-<common-breaking-news-layout data=data />
+$ const { newsletter } = data;
+
+<common-breaking-news-layout data=data>
+  <@footer>
+    <common-am-footer-block newsletter=newsletter />
+  </@footer>
+</common-breaking-news-layout>
