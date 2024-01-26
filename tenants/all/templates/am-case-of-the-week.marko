@@ -31,7 +31,7 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
     <common-head-block />
   </@head>
   <@body style="padding:0; margin:0;font-family: 'Roboto', Arial, sans-serif; -webkit-text-size-adjust:100%;">
-    <common-body-wrapper-block newsletter=newsletter date=date>
+    <common-body-wrapper-block newsletter=newsletter date=date footer=input.footer>
       <@body>
 
         <common-ad-wrapper-block
@@ -58,6 +58,9 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
         />
 
       </@body>
+      <@footer>
+        <common-am-footer-block newsletter=newsletter />
+      </@footer>
     </common-body-wrapper-block>
   </@body>
 </marko-newsletter-root>

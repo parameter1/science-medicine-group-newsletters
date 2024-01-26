@@ -1,1 +1,7 @@
-<common-insider-layout data=data display-limit=16/>
+$ const { newsletter } = data;
+
+<common-insider-layout data=data display-limit=16>
+  <@footer>
+    <common-am-footer-block newsletter=newsletter />
+  </@footer>
+</common-insider-layout>
