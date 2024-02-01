@@ -53,7 +53,9 @@ const config = {
       src: '/files/base/smg/all/image/static/drb/DrB_EmailHeader_LFTE_v3.jpg',
       footerWidth: 200,
     },
-    preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
+    preferenceCenter: 'https://my.drbicuspid.com/unsubscribe/',
+    subTitle: 'DrBicuspid Daily Newsletter',
+    subID: '2712ea70-a46a-4b40-91bb-e00c38647657',
     caseBlock: true,
   },
   'drb-breaking-news': {
