@@ -21,7 +21,7 @@
   "<common-external-api-block>": {
     "template": "./external-api.marko"
   },
-  "<common-footer-new-block>": {
-    "template": "footer-new.marko"
+  "<common-new-footer-block>": {
+    "template": "new-footer.marko"
   }
 }
