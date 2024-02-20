@@ -238,7 +238,7 @@ const config = {
     ...brands.ame,
     name: 'AuntMinnieEurope-Radcast',
     logo: {
-      src: '/files/base/smg/all/image/static/ame/AuntMinnieEurope-Radcast.png',
+      src: '/files/base/smg/all/image/static/ame/AME_RADCast.jpeg',
       footerWidth: 200,
     },
     preferenceCenter: 'https://www.auntminnieeurope.com/user/subscribe',
