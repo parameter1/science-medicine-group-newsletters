@@ -23,12 +23,19 @@ x-env-defaults: &env
   NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
   EMAILX_SERVE_URI: ${EMAILX_SERVE_URI-https://smg.serve.email-x.parameter1.com}
+  NATIVEX_SERVE_URI: ${NATIVEX_SERVE_URI-https://delivery.mindfulcms.com/smg/default/compat/native-email/email-placement}
 
 x-env-leonis: &env-leonis
-  GRAPHQL_URI: ${GRAPHQL_URI-https://leonis.graphql.base.parameter1.com}
+  <<: *env
+  GRAPHQL_URI: ${GRAPHQL_URI-https://graphql.leonis.base.parameter1.com}
+
+x-env-tauron: &env-tauron
+  <<: *env
+  GRAPHQL_URI: ${GRAPHQL_URI-https://graphql.tauron.base.parameter1.com}
 
 x-env-virgon: &env-virgon
-  GRAPHQL_URI: ${GRAPHQL_URI-https://virgon.graphql.base.parameter1.com}
+  <<: *env
+  GRAPHQL_URI: ${GRAPHQL_URI-https://graphql.virgon.base.parameter1.com}
 
 services:
   terminal:
@@ -49,7 +56,6 @@ services:
     <<: *newsletter-cmd
     working_dir: /root/tenants/all
     environment:
-      <<: *env
       <<: *env-virgon
       PORT: 80
       EXPOSED_PORT: 22290
