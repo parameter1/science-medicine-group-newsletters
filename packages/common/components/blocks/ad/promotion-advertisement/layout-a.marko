@@ -1,13 +1,11 @@
 import { get, getAsObject } from "@parameter1/base-cms-object-path";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
-$ const { req } = out.global;
-$ const nativeAdLayout = get(req, "query.native-ad-layout");
-$ const newsletter = getAsObject(input, "newsletter");
-$ const { sectionName, date, content } = input;
+$ const creativeId = get(input, "creativeId");
+$ const tenant = get(input, "tenant");
+$ const content = getAsObject(input, "content");
 
 $ const url = buildLinkUrl(get(content, "siteContext.path"));
-$ const company = getAsObject(content, "company");
 $ const label = input.label || "Paid Advertisement";
 
 $ const imgStyles = {
@@ -21,6 +19,30 @@ $ const imgLinkStyles = {
   "font-size": "14px",
   "line-height": 0,
 };
+
+$ const nameLinkStyles = {
+  "font-size": "24px",
+  "line-height": "28px",
+  "color": "#202022",
+  "font-weight": "700",
+  "text-decoration": "none",
+};
+
+$ const presentationLinkStyles = {
+  "line-height": "90px",
+  "color": "#257478",
+  "text-decoration": "none",
+};
+
+$ const linkAttrs = {
+  ...(getAsObject(input, "link.attrs")),
+  ...(creativeId && { 'data-mindful-creative-id': creativeId }),
+  ...(tenant && { 'data-mindful-tenant': tenant }),
+};
+
+$ const imgLinkAttrs = { style: imgLinkStyles, ...linkAttrs };
+$ const nameLinkAttrs = { style: nameLinkStyles, ...linkAttrs };
+$ const presentationLinkAttrs = { style: presentationLinkStyles, ...linkAttrs };
 
 <tr>
   <td align="center" valign="top">
@@ -51,7 +73,9 @@ $ const imgLinkStyles = {
                   <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td align="left" valign="top" style="font-size: 24px;line-height: 28px;color: #202022;font-weight: 700;text-decoration: none;padding:0 24px 0 0;">
-                        <a href=url target="_blank" style="font-size: 24px;line-height: 28px;color: #202022;font-weight: 700;text-decoration: none;">${content.name}</a>
+                        <marko-core-obj-text obj=content field="name" tag=false>
+                          <@link href=url target="_blank" attrs=nameLinkAttrs />
+                        </marko-core-obj-text>
                       </td>
                     </tr>
                     <common-table-spacer-element height="12" />
@@ -63,9 +87,9 @@ $ const imgLinkStyles = {
                           <table>
                             <tr>
                               <td style="padding-right:24px">
-                                <a href=url target="_blank" style="line-height: 90px;color: #257478;text-decoration: none;">
-                                  Presented by
-                                </a>
+                                <marko-core-obj-text obj={ name: "Presented by" } field="name" tag=false>
+                                  <@link href=url target="_blank" attrs=presentationLinkAttrs />
+                                </marko-core-obj-text>
                               </td>
                               <td>
                                 <marko-core-obj-value|{ value: image }| obj=content.company field="primaryImage" as="object">
