@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@parameter1/base-cms-eslint": "^4.5.12",
-    "@parameter1/base-cms-marko-compiler": "^4.5.12",
+    "@parameter1/base-cms-marko-compiler": "^4.40.3",
     "lerna": "^6.5.1"
   },
   "resolutions": {
