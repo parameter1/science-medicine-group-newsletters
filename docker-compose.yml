@@ -22,7 +22,7 @@ x-env-defaults: &env
   NODE_ENV: development
   NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
   NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
-  EMAILX_SERVE_URI: ${EMAILX_SERVE_URI-https://smg.serve.email-x.parameter1.com}
+  EMAILX_SERVE_URI: ${EMAILX_SERVE_URI-https://delivery.mindfulcms.com/smg/default/compat/email-banner}
   NATIVEX_SERVE_URI: ${NATIVEX_SERVE_URI-https://delivery.mindfulcms.com/smg/default/compat/native-email/email-placement}
 
 x-env-leonis: &env-leonis

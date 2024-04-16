@@ -1,81 +1,18 @@
-import { getAsObject, get } from "@parameter1/base-cms-object-path";
-import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import { getAsObject } from "@parameter1/base-cms-object-path";
 
 $ const adUnit = getAsObject(input, "adUnit");
-$ const dpm = getAsObject(input, "dpm");
-$ const linkLabelProps = getAsObject(input, "linkLabelProps");
-$ const { adLocation, platformDesignator } = linkLabelProps;
 
-$ const useEmailxHref = defaultValue(input.useEmailxHref, false);
-$ const withLabel = defaultValue(input.withLabel, false);
-$ const label = defaultValue(input.label, 'Advertisement');
-
-$ const { name, alias } = adUnit;
-$ const classNames = [`email-x-${alias}-${name}`, input.class];
-
-<marko-newsletters-email-x-data|{ response }| decoded-params=["email", "send"]>
+<marko-newsletters-email-x-data|{ response }| decoded-params=['email', 'send']>
   <@ad-unit ...adUnit />
-  <@params date=input.date email="@{email name}@" send="@{track_id}@" include-advertiser=true />
+  <@params date=input.date email="{{\${braze_id}}}" />
   <if(response)>
-    $ const { data, clickHref, imageSrc } = response;
-    $ const { ad } = data;
-    <!-- determine whether to use emailx click url or the native ad url -->
-    $ const href = useEmailxHref ? clickHref : ad.url;
-    $ const imageAttrs = {
-      ...getAsObject(input.image, "attrs"),
-      width: ad.width,
-      height: ad.height,
-    };
     <tr>
       <td align="center" valign="top">
         <table role="presentation" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
           <tbody>
-            <if(withLabel)>
-              <tr>
-                <td align="left" valign="middle" style="font-size:15px;line-height:20px; color:#666666;font-weight:400;text-align: center;">${label}</td>
-              </tr>
-              <common-table-spacer-element height="2" />
-            </if>
             <tr>
               <td align="center" valign="top" class="mobile">
-                <marko-core-img ...input.image src=imageSrc attrs=imageAttrs class="img_resize1">
-                  <@link
-                    target="_blank"
-                    ...input.link
-                    href=href
-                    attrs={
-                      linklabel: `ad|${adLocation}|${platformDesignator}|${ad.lineitemName}`
-                    }
-                  />
-                </marko-core-img>
-                <if(defaultValue(dpm.enabled, true))>
-                  $ const position = dpm.position || 0;
-                  $ const lcvDefaultValue = position + "|" + get(data, "ad.lineitemName");
-                  $ const dpmArgs = ["ln", "lc", "lcv", "lkw"].reduce((o, key) => {
-                    // allow null to unset the default values.
-                    if (dpm[key] === null) return { ...o, [key]: "" };
-
-                    // otherwise treat all values as strings
-                    const value = `${dpm[key] || ''}`;
-                    if (!value) return o;
-                    // if value is in the form of {some.path} (e.g. {ad.lineItemname})
-                    // get the value off of the emailx response
-                    // otherwise, treat the value as a literal string and use it
-                    const matches = /^\{(.*)\}$/.exec(value);
-                    if (matches && matches[1]) {
-                      const v = get(data, matches[1]);
-                      if (v) return { ...o, [key]: v };
-                      return o;
-                    }
-                    return { ...o, [key]: value };
-                  }, {
-                    lc: "Advertising",
-                    lkw: "bannerad",
-                    ln: get(data, "ad.advertiserName"),
-                    lcv: lcvDefaultValue,
-                  });
-                  <!-- <marko-newsletters-omail-dpm ...dpmArgs /> -->
-                </if>
+                <marko-newsletters-email-x-render response=response />
               </td>
             </tr>
             <common-table-spacer-element height="25" />
