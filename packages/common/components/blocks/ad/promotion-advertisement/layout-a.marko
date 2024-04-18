@@ -1,0 +1,129 @@
+import { get, getAsObject } from "@parameter1/base-cms-object-path";
+import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
+
+$ const creativeId = get(input, "creativeId");
+$ const tenant = get(input, "tenant");
+$ const content = getAsObject(input, "content");
+
+$ const url = buildLinkUrl(get(content, "siteContext.path"));
+$ const label = input.label || "Paid Advertisement";
+
+$ const imgStyles = {
+  "font-size": "14px",
+  "line-height": 0,
+  "border": 0,
+};
+
+$ const imgLinkStyles = {
+  "display": "block",
+  "font-size": "14px",
+  "line-height": 0,
+};
+
+$ const nameLinkStyles = {
+  "font-size": "24px",
+  "line-height": "28px",
+  "color": "#202022",
+  "font-weight": "700",
+  "text-decoration": "none",
+};
+
+$ const presentationLinkStyles = {
+  "line-height": "90px",
+  "color": "#257478",
+  "text-decoration": "none",
+};
+
+$ const linkAttrs = {
+  ...(getAsObject(input, "link.attrs")),
+  ...(creativeId && { 'data-mindful-creative-id': creativeId }),
+  ...(tenant && { 'data-mindful-tenant': tenant }),
+};
+
+$ const imgLinkAttrs = { style: imgLinkStyles, ...linkAttrs };
+$ const nameLinkAttrs = { style: nameLinkStyles, ...linkAttrs };
+$ const presentationLinkAttrs = { style: presentationLinkStyles, ...linkAttrs };
+
+<tr>
+  <td align="center" valign="top">
+    <table role="presentation" width="610" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap003">
+        <common-table-hr-element />
+        <common-table-spacer-element height="12" />
+        <tr>
+          <td align="left" valign="middle" style="font-size:15px;line-height:20px; color:#666666;font-weight:400;text-align: center;">${label}</td>
+        </tr>
+        <tr>
+          <td align="center" valign="top" dir="rtl">
+            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+              <common-table-spacer-element height="12" />
+              <tr>
+                <td align="right" valign="top" width="270" class="split_cont1">
+                  <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
+                    <marko-newsletter-imgix
+                      src=image.src
+                      alt=image.alt
+                      options={ w: 300, h: 250, fit: "crop", auto: "format,compress" }
+                      attrs={ border: 0, width: 300, style: imgStyles }
+                    >
+                      <@link href=url target="_blank" attrs={ style: imgLinkStyles } />
+                    </marko-newsletter-imgix>
+                  </marko-core-obj-value>
+                </td>
+                <td align="left" valign="top" class="split_cont1" dir="ltr">
+                  <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td align="left" valign="top" style="font-size: 24px;line-height: 28px;color: #202022;font-weight: 700;text-decoration: none;padding:0 24px 0 0;">
+                        <marko-core-obj-text obj=content field="name" tag=false>
+                          <@link href=url target="_blank" attrs=nameLinkAttrs />
+                        </marko-core-obj-text>
+                      </td>
+                    </tr>
+                    <common-table-spacer-element height="12" />
+                    <tr>
+                      <td align="left" valign="top" style="font-size: 17px;line-height: 22px;color: #202022;padding:0 24px 0 0;">${content.teaser}</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                          <table>
+                            <tr>
+                              <td style="padding-right:24px">
+                                <marko-core-obj-text obj={ name: "Presented by" } field="name" tag=false>
+                                  <@link href=url target="_blank" attrs=presentationLinkAttrs />
+                                </marko-core-obj-text>
+                              </td>
+                              <td>
+                                <marko-core-obj-value|{ value: image }| obj=content.company field="primaryImage" as="object">
+                                  <marko-newsletter-imgix
+                                    src=image.src
+                                    alt=image.alt
+                                    options={ w: 180, h: 180, fit: "fill", fill: "solid", auto: "format,compress" }
+                                    attrs={ border: 0, width: 90, height: 90, style: imgStyles, align: "left" }
+                                  >
+                                    <@link
+                                      href=url
+                                      target="_blank"
+                                      attrs={
+                                        style: {
+                                          "font-size": "14px",
+                                          "line-height": 0,
+                                        }
+                                      }
+                                    />
+                                  </marko-newsletter-imgix>
+                                </marko-core-obj-value>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <common-table-hr-element height="18" />
+        <common-table-spacer-element height="32" />
+    </table>
+  </td>
+</tr>

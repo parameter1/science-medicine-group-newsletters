@@ -1,11 +1,10 @@
 import { get, getAsObject } from "@parameter1/base-cms-object-path";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
-$ const newsletter = getAsObject(input, "newsletter");
-$ const { sectionName, date, content } = input;
-
+$ const creativeId = get(input, "creativeId");
+$ const tenant = get(input, "tenant");
+$ const content = getAsObject(input, "content");
 $ const url = buildLinkUrl(get(content, "siteContext.url"));
-$ const company = getAsObject(content, "company");
 
 $ const imgStyles = {
   "font-size": "14px",
@@ -17,7 +16,15 @@ $ const imgLinkStyles = {
   "display": "block",
   "font-size": "14px",
   "line-height": 0,
-}
+};
+
+$ const linkAttrs = {
+  ...(getAsObject(input, "link.attrs")),
+  ...(creativeId && { 'data-mindful-creative-id': creativeId }),
+  ...(tenant && { 'data-mindful-tenant': tenant }),
+};
+
+$ const imgLinkAttrs = { style: imgLinkStyles, ...linkAttrs };
 
 <tr>
   <td align="center" valign="top">
@@ -50,20 +57,10 @@ $ const imgLinkStyles = {
                                         options={ w: 300, h: 50, fit: "fill", auto: "format,compress" }
                                         attrs={ border: 0, width: 300, style: imgStyles }
                                       >
-                                        <@link href=url target="_blank" attrs={ style: imgLinkStyles } />
+                                        <@link href=url target="_blank" attrs=imgLinkAttrs />
                                       </marko-newsletter-imgix>
                                     </marko-core-obj-value>
                                   </td>
-                                  <!-- <td align="left" valign="top">
-                                    <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0">
-                                      <tr>
-                                        <td align="left" valign="top" style="font-size:16px;line-height:19px;color:#202022;font-weight:700;">${company.name}</td>
-                                      </tr>
-                                      <tr>
-                                        <td align="left" valign="top" style="font-size:16px;line-height:22px;color:#202022;font-weight:400;">${content.teaser}</td>
-                                      </tr>
-                                    </table>
-                                  </td> -->
                                 </tr>
                               </table>
                             </td>
@@ -74,12 +71,6 @@ $ const imgLinkStyles = {
                   </table>
                 </td>
               </tr>
-              <!-- <common-table-spacer-element height="6" />
-              <tr>
-                <td align="left" valign="top" style="font-size:16px;line-height:23px;color:#3475b6;font-weight:400;padding: 0 0 0 123px;" class="wdth">
-                  <a href=url target="_blank" style="text-decoration: none;color: #3475b6;">${content.name}</a>
-                </td>
-              </tr> -->
               <common-table-hr-element height="15" />
               <common-table-spacer-element height="18" />
             </tbody>
