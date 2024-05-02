@@ -50,12 +50,12 @@ $ const nameLinkAttrs = { style: nameLinkStyles, ...linkAttrs };
             <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
               <common-table-spacer-element height="12" />
               <tr>
-                <td align="right" valign="top" width="270" class="split_cont1">
+                <td align="right" valign="top" class="split_cont1">
                   <marko-core-obj-value|{ value: image }| obj=content field="primaryImage" as="object">
                     <marko-newsletter-imgix
                       src=image.src
                       alt=image.alt
-                      options={ w: 300, h: 250, fit: "crop", auto: "format,compress" }
+                      options={ w: 300, fit: "crop", auto: "format,compress" }
                       attrs={ border: 0, width: 300, style: imgStyles }
                     >
                       <@link href=url target="_blank" attrs=imgLinkAttrs />
