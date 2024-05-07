@@ -116,6 +116,12 @@ config
   .setAdUnits('am-lfte', [
     {
       name: 'ad-slot-1',
+      id: '663a7caddf81cf4fba80f612',
+      width: 300,
+      height: 250,
+    },
+    {
+      name: 'ad-slot-2',
       id: '647e1b53f89e58ac004ca4f7',
       width: 300,
       height: 250,
