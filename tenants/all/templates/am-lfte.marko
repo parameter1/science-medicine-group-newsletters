@@ -35,6 +35,35 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
     <common-body-wrapper-block newsletter=newsletter date=date footer=input.footer>
       <@body>
 
+        <!-- RADCast section -->
+        <common-content-list-block
+          date=date
+          section-name="RADCast"
+          newsletter=newsletter
+          with-image=false
+          with-header=true
+          with-section=true
+          limit=3
+        />
+
+        <!-- Ad Slot 1 -->
+        <common-ad-wrapper-block
+          newsletter=newsletter
+          ad-unit=emailX.getAdUnit({ name: 'ad-slot-1', alias: newsletter.alias })
+          date=date
+        />
+
+        <!-- RADCast section -->
+        <common-content-list-block
+          date=date
+          section-name="RADCast"
+          newsletter=newsletter
+          with-image=false
+          with-section=true
+          skip=3
+          limit=7
+        />
+
         <!-- Content list block -->
         <common-content-list-block
           date=date
@@ -80,11 +109,11 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           skip=2
         />
 
-        <!-- Ad Slot 1 -->
+        <!-- Ad Slot 2 -->
         <common-ad-wrapper-block
           newsletter=newsletter
           promotion-component="advertisement-block"
-          ad-unit=emailX.getAdUnit({ name: 'ad-slot-1', alias: newsletter.alias })
+          ad-unit=emailX.getAdUnit({ name: 'ad-slot-2', alias: newsletter.alias })
           placement-id=get(nativeX, `placements.${newsletter.alias}.slot-1`)
           date=date
         />
