@@ -2,7 +2,7 @@ import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
-$ const { content, ctaLinkStyle } = input;
+$ const { content, ctaLinkStyle, advertiser } = input;
 $ const creativeId = get(input, "mindfulCreativeId");
 $ const tenant = get(input, "mindfulTenant");
 $ const url = buildLinkUrl(content.siteContext.url);
@@ -77,6 +77,16 @@ $ const ctaLinkAttrs = { style: ctaLinkStyles, ...linkAttrs };
         $ const tag = (content.company) ? `Sponsored Content by ${get(content, "company.name")}` : "Sponsored Content";
         <tr>
           <td align="left" valign="top" style=sponsoredTagStyle>${tag}</td>
+          <td align="right" width="200">
+            <marko-newsletter-imgix
+              src=advertiser.image.src
+              alt=advertiser.image.alt
+              options={ w: 360, auto: "format,compress" }
+              attrs={ border: 0, width: 180 }
+            >
+              <@link href=advertiser.website target="_blank" attrs=imgLinkAttrs />
+            </marko-newsletter-imgix>
+          </td>
         </tr>
       </if>
       <else-if(withSection)>

@@ -34,6 +34,7 @@ module.exports = {
     'am-lfte': {
       'slot-1': '647e1c415150cb0001181028',
       'case-sponsor': '647e1c36989f4f0001733285',
+      sponsored: '664387f3ce30e70001d9e8ac',
     },
     'am-community-insider': {
       community: '64ff4d1896af9a00016a8b4f',

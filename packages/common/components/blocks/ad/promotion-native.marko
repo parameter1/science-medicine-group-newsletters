@@ -2,12 +2,16 @@ import { get, getAsObject } from "@parameter1/base-cms-object-path";
 
 $ const creativeId = get(input, "creativeId");
 $ const tenant = get(input, "tenant");
+$ const newsletter = getAsObject(input, "newsletter");
 $ const content = getAsObject(input, "content");
+$ const advertiser = getAsObject(input, "advertiser");
 $ content.labels = ["Sponsored"];
 
 <common-content-list-item-block
+  newsletter=newsletter
   content=content
   with-image=false
+  advertiser=advertiser
   mindful-creative-id=creativeId
   mindful-tenant=tenant
 />
