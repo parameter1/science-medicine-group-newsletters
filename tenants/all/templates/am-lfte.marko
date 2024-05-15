@@ -152,6 +152,13 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
             placement-id=get(nativeX, `placements.${newsletter.alias}.case-sponsor`)
           />
 
+          <common-ad-wrapper-block
+            newsletter=newsletter
+            promotion-component="advertisement-block"
+            ad-unit=emailX.getAdUnit({ name: 'case-sponsor', alias: newsletter.alias })
+            date=date
+          />
+
           <common-external-api-block
             api-url="https://my.auntminnie.com/wp-json/mo/v1/getCase/3"
             resolved-to-nodes-converter=resolvedToNodesConverter

@@ -126,6 +126,12 @@ config
       width: 300,
       height: 250,
     },
+    {
+      name: 'case-sponsor',
+      id: '6644e5313a17bf3cf0123d9d',
+      width: 300,
+      height: 250,
+    },
   ])
   .setAdUnits('am-community-insider', [
     {
