@@ -3,7 +3,6 @@ import moment from "moment";
 $ const { newsletter, date } = input;
 
 $ const unixTimestamp = moment(date).unix();
-$ const stealthLinkUrl = `${newsletter.site.origin}/email-preview/${newsletter.id}/${unixTimestamp}`;
 
 <table role="presentation" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
@@ -28,13 +27,9 @@ $ const stealthLinkUrl = `${newsletter.site.origin}/email-preview/${newsletter.i
                 <common-header-block date=date newsletter=newsletter />
               </else>
 
-              <common-stealth-link-element link-text=newsletter.site.name link-url=`${stealthLinkUrl}/top` />
-
               <if(input.body)>
                 <${input.body} />
               </if>
-
-              <common-stealth-link-element link-text=newsletter.site.name link-url=`${stealthLinkUrl}/bottom` />
 
               <!-- Footer block -->
               <if(input.footer)>
