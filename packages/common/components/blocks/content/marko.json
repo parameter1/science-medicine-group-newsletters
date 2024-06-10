@@ -10,5 +10,8 @@
   },
   "<common-content-api-list-item-block>": {
     "template": "./api-list-item.marko"
+  },
+  "<common-content-25-for-25-block>": {
+    "template": "./25-for-25.marko"
   }
 }
