@@ -16,5 +16,8 @@
   },
   "<common-ad-promotion-case-native-block>": {
     "template": "./promotion-case-native.marko"
+  },
+  "<common-ad-promotion-25-for-25-block>": {
+    "template": "./promotion-25-for-25.marko"
   }
 }

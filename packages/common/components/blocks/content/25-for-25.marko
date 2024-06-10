@@ -1,0 +1,108 @@
+import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
+
+$ const { content, ctaLinkStyle, advertiser } = input;
+$ const creativeId = get(input, "mindfulCreativeId");
+$ const tenant = get(input, "mindfulTenant");
+$ const url = buildLinkUrl(content.siteContext.url);
+
+$ const imgLinkStyles = {
+  "font-family": "'Roboto', arial, sans-serif",
+  "border": 0,
+  "outline": "none",
+  "text-decoration": "none",
+};
+
+$ const nameLinkStyles = {
+  "font-family": "'Roboto', arial, sans-serif",
+  "font-size": "24px",
+  "line-height": "28px",
+  "color": "#202022",
+  "font-weight": "700",
+  "text-decoration": "none",
+};
+
+$ const ctaLinkStyles = {
+  "font-size": "17px",
+  "line-height": "23px",
+  "color": "#3475b6",
+  "font-weight": "400",
+  "text-decoration": "none",
+  ...input.linkStyle,
+};
+
+$ const tagStyle = {
+  "font-family": "'Roboto', arial, sans-serif",
+  "font-size": "14px",
+  "line-height": "19px",
+  "color": "#257478",
+  "text-transform": "uppercase",
+};
+
+$ const sponsoredTagStyle = {
+  ...tagStyle,
+  "color": "#a91b20",
+};
+
+$ const linkAttrs = {
+  ...(getAsObject(input, "link.attrs")),
+  ...(creativeId && { 'data-mindful-creative-id': creativeId }),
+  ...(tenant && { 'data-mindful-tenant': tenant }),
+};
+
+$ const imgLinkAttrs = { style: imgLinkStyles, ...linkAttrs };
+$ const nameLinkAttrs = { style: nameLinkStyles, ...linkAttrs };
+$ const ctaLinkAttrs = { style: ctaLinkStyles, ...linkAttrs };
+
+<tr>
+  <td align="center" valign="top">
+    <table role="presentation" width="100%" border="0" align="center"  cellpadding="0" cellspacing="0" style="background: #eff1f3;">
+      <tr>
+        <td align="center" valign="middle" height="38">
+          <p style="font-size:15px;color: #000000;text-decoration: none;display: block;font-weight:700;font-family:'Roboto', Arial, sans-serif;text-transform: uppercase;padding: 0 24px;">
+            25 for 25
+          </p>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<common-table-spacer-element height="24" />
+<tr>
+  <td align="center" valign="top">
+    <table role="presentation" width="610" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap003">
+      $ const tag = (content.company) ? `Sponsored by ${get(content, "company.name")}` : "Sponsored Content";
+      <tr>
+        <td align="left" valign="top" style=sponsoredTagStyle>${tag}</td>
+        <td align="right" width="200">
+          <marko-newsletter-imgix
+            src=advertiser.image.src
+            alt=advertiser.image.alt
+            options={ auto: "format,compress" }
+            attrs={ border: 0, width: 180, height: 50 }
+          >
+            <@link href=advertiser.website target="_blank" attrs=imgLinkAttrs />
+          </marko-newsletter-imgix>
+        </td>
+      </tr>
+      <common-table-spacer-element height="6" />
+    </table>
+    <table role="presentation" width="610" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap003">
+      <tr>
+        <td align="left" valign="top">
+          <marko-core-obj-text obj=content field="name" tag=false>
+            <@link href=url target="_blank" attrs=nameLinkAttrs class="font1" />
+          </marko-core-obj-text>
+        </td>
+      </tr>
+      <common-table-spacer-element height="5" />
+      <tr>
+        <td align="left" valign="middle" style="font-family: 'Roboto', arial, sans-serif;font-size: 17px;line-height: 23px;color: #202022;font-weight: 400;">
+          $!{content.teaser}
+        </td>
+      </tr>
+      <common-table-spacer-element height="32" />
+    </table>
+  </td>
+</tr>
