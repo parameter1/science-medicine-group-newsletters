@@ -108,7 +108,7 @@ const config = {
     ...brands.am,
     name: 'AuntMinnie-Letter From The Editor',
     logo: {
-      src: '/files/base/smg/all/image/static/am/auntminnie-LFTE.png',
+      src: '/files/base/smg/all/image/static/am/AM_Daily.png',
       footerWidth: 200,
     },
     preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
@@ -131,7 +131,7 @@ const config = {
     ...brands.am,
     name: 'AuntMinnie-Community Insider',
     logo: {
-      src: '/files/base/smg/all/image/static/am/auntminnie-Insider.png',
+      src: '/files/base/smg/all/image/static/am/AM_Insider.png',
       footerWidth: 200,
     },
     preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
