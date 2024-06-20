@@ -244,6 +244,26 @@ config
       width: 300,
       height: 250,
     },
+  ])
+  .setAdUnits('am-weekly', [
+    {
+      name: 'ad-slot-1',
+      id: '6674422515168281400d5833',
+      width: 300,
+      height: 250,
+    },
+    {
+      name: 'ad-slot-2',
+      id: '6674423d311907bdd103a543',
+      width: 300,
+      height: 250,
+    },
+    {
+      name: 'case-sponsor',
+      id: '66744255311907260003a556',
+      width: 300,
+      height: 250,
+    },
   ]);
 
 module.exports = config;
