@@ -251,6 +251,7 @@ const config = {
       footerWidth: 200,
     },
     preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+    caseBlock: true,
   },
 };
 
