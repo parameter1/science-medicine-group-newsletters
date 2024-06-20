@@ -75,5 +75,9 @@ module.exports = {
     'ame-radcast': {
       'slot-1': '6549475a91f3fc0001ea907c',
     },
+    'am-weekly': {
+      'case-sponsor': '6674430f49e2ea000100c0f2',
+      sponsored: '66744322f0716b0001d593cf',
+    },
   },
 };

@@ -243,6 +243,15 @@ const config = {
     },
     preferenceCenter: 'https://www.auntminnieeurope.com/user/subscribe',
   },
+  'am-weekly': {
+    ...brands.am,
+    name: 'AuntMinnie-Weekly',
+    logo: {
+      src: '/files/base/smg/all/image/static/am/AM_Weekly.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
+  },
 };
 
 module.exports = config;
