@@ -181,12 +181,15 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           limit=5
         />
 
-        <!-- 25 FOR 25 Native block -->
-        <common-ad-wrapper-block
+        <!-- Content list block -->
+        <common-content-list-block
           date=date
+          section-name="25 For 25"
           newsletter=newsletter
-          promotion-component="25-for-25-block"
-          placement-id=get(nativeX, `placements.${newsletter.alias}.sponsored`)
+          with-image=false
+          with-header=true
+          continue-reading=false
+          limit=1
         />
 
       </@body>
