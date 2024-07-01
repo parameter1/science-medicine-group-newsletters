@@ -38,7 +38,7 @@ module.exports = {
       imagePath: '/files/base/smg/all/image/static/newsletter',
       links: [
         { provider: 'facebook', href: 'https://www.facebook.com/auntminnieeurope', target: '_blank' },
-        { provider: 'twitter', href: 'https://twitter.com/auntminnieeurope', target: '_blank' },
+        { provider: 'twitter', href: 'x.com/auntminnieeuro', target: '_blank' },
         { provider: 'linkedin', href: 'https://www.linkedin.com/company/auntminnieeurope.com/', target: '_blank' },
       ],
     },
