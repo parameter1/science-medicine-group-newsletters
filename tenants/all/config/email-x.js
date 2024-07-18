@@ -42,6 +42,12 @@ config
       width: 300,
       height: 250,
     },
+    {
+      name: 'case-sponsor',
+      id: '669949c5a9b3ee2103a0eca4',
+      width: 300,
+      height: 250,
+    },
   ])
   .setAdUnits('drb-community-insider', [
     {
