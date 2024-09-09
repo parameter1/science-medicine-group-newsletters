@@ -16,6 +16,7 @@ module.exports = {
     },
     'drb-lfte': {
       'slot-1': '638619dad6ced5000110a551',
+      'slot-2': '66daff52feb239558f0e8f61',
       'case-sponsor': '643d7f61b91bf50001eff980',
     },
     'drb-community-insider': {
