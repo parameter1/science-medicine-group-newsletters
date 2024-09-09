@@ -16,6 +16,7 @@ module.exports = {
     },
     'drb-lfte': {
       'slot-1': '638619dad6ced5000110a551',
+      'slot-2': '66daff52feb239558f0e8f61',
       'case-sponsor': '643d7f61b91bf50001eff980',
     },
     'drb-community-insider': {
@@ -78,9 +79,6 @@ module.exports = {
     'am-weekly': {
       'case-sponsor': '6674430f49e2ea000100c0f2',
       sponsored: '66744322f0716b0001d593cf',
-    },
-    'drb-lfte': {
-      'slot-2': '66daff52feb239558f0e8f61',
     },
   },
 };
