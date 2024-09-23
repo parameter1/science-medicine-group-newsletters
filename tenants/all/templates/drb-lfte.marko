@@ -85,8 +85,28 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           with-image=true
           image-position="right"
           with-section=true
-          limit=2
+          limit=7
           skip=2
+        />
+
+        <common-content-list-block
+          date=date
+          section-name="Community Insider"
+          newsletter=newsletter
+          with-image=false
+          with-section=true
+          with-header=true
+          limit=1
+        />
+
+        <common-content-list-block
+          date=date
+          section-name="Community Insider"
+          newsletter=newsletter
+          with-image=false
+          with-section=true
+          limit=1
+          skip=1
         />
 
         <common-ad-wrapper-block
@@ -97,15 +117,14 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           placement-id=get(nativeX, `placements.${newsletter.alias}.slot-2`)
         />
 
-        <!-- Content list block -->
         <common-content-list-block
           date=date
-          section-name="Main"
+          section-name="Community Insider"
           newsletter=newsletter
           with-image=false
           with-section=true
-          skip=4
-          limit=5
+          limit=4
+          skip=2
         />
 
         <if(caseBlock === true)>
