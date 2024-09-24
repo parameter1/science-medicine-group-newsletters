@@ -3,6 +3,7 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
 $ const { content, ctaLinkStyle, advertiser } = input;
+$ const company = (advertiser) ? advertiser : content.company;
 $ const creativeId = get(input, "mindfulCreativeId");
 $ const tenant = get(input, "mindfulTenant");
 $ const url = buildLinkUrl(content.siteContext.url);
@@ -78,7 +79,7 @@ $ const ctaLinkAttrs = { style: ctaLinkStyles, ...linkAttrs };
         <tr>
           <td align="left" valign="top" style=sponsoredTagStyle>${tag}</td>
           <td align="right" width="200">
-            <marko-core-obj-value|{ value: image }| obj=content.company field="primaryImage" as="object">
+            <marko-core-obj-value|{ value: image }| obj=company field="primaryImage" as="object">
               <marko-newsletter-imgix
                 src=image.src
                 alt=image.alt
