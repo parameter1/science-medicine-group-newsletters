@@ -139,6 +139,12 @@ config
       height: 250,
     },
     {
+      name: 'ad-slot-3',
+      id: '671708e08a67fca32e87440d',
+      width: 300,
+      height: 250,
+    },
+    {
       name: 'case-sponsor',
       id: '6644e5313a17bf3cf0123d9d',
       width: 300,
