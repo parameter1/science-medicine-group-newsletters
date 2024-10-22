@@ -78,7 +78,7 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
 
         <common-content-list-block
           date=date
-          section-name="Radiology News"
+          section-name="Top Stories"
           newsletter=newsletter
           with-image=true
           image-position="right"
@@ -90,7 +90,7 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
         <!-- Content list block -->
         <common-content-list-block
           date=date
-          section-name="Radiology News"
+          section-name="Top Stories"
           newsletter=newsletter
           with-image=false
           with-section=true
@@ -100,7 +100,7 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
 
         <common-content-list-block
           date=date
-          section-name="Radiology News"
+          section-name="Top Stories"
           newsletter=newsletter
           with-image=true
           image-position="right"
@@ -121,12 +121,41 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
         <!-- Content list block -->
         <common-content-list-block
           date=date
-          section-name="Radiology News"
+          section-name="Top Stories"
           newsletter=newsletter
           with-image=false
           with-section=true
           skip=3
           limit=11
+        />
+
+        <!-- Content list block -->
+        <common-content-list-block
+          date=date
+          section-name="Insider"
+          newsletter=newsletter
+          with-image=true
+          image-position="right"
+          with-header=true
+          skip=0
+          limit=1
+        />
+
+        <!-- Content list block -->
+        <common-content-list-block
+          date=date
+          section-name="Insider"
+          newsletter=newsletter
+          with-image=false
+          skip=1
+          limit=4
+        />
+
+        <!-- Ad Slot 3 -->
+        <common-ad-wrapper-block
+          newsletter=newsletter
+          ad-unit=emailX.getAdUnit({ name: 'ad-slot-3', alias: newsletter.alias })
+          date=date
         />
 
         <if(caseBlock === true)>
