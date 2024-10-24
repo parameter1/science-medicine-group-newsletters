@@ -77,7 +77,7 @@ $ const ctaLinkAttrs = { style: ctaLinkStyles, ...linkAttrs };
       <if(labels.includes("Sponsored"))>
         $ const tag = (content.company) ? `Sponsored by ${get(content, "company.name")}` : "Sponsored Content";
         <tr>
-          <!-- <td align="left" valign="top" style=sponsoredTagStyle>${tag}</td> -->
+          <td align="left" valign="top" style=sponsoredTagStyle>${tag}</td>
           <td align="right" width="200">
             <marko-core-obj-value|{ value: image }| obj=company field="primaryImage" as="object">
               <marko-newsletter-imgix
