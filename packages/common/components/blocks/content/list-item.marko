@@ -73,7 +73,7 @@ $ const ctaLinkAttrs = { style: ctaLinkStyles, ...linkAttrs };
   <td align="center" valign="top">
     <table role="presentation" width="610" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap003">
 
-      $ const labels = getAsArray(content, "labels");
+      <!-- $ const labels = getAsArray(content, "labels");
       <if(labels.includes("Sponsored"))>
         $ const tag = (content.company) ? `Sponsored by ${get(content, "company.name")}` : "Sponsored Content";
         <tr>
@@ -91,12 +91,12 @@ $ const ctaLinkAttrs = { style: ctaLinkStyles, ...linkAttrs };
             </marko-core-obj-value>
           </td>
         </tr>
-      </if>
-      <else-if(withSection)>
+      </if> -->
+      <if(withSection)>
         <tr>
           <td align="left" valign="top" style=tagStyle>${get(content, "primarySection.name")}</td>
         </tr>
-      </else-if>
+      </if>
 
       <common-table-spacer-element height="6" />
     </table>
