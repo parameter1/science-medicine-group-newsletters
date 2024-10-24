@@ -72,26 +72,7 @@ $ const ctaLinkAttrs = { style: ctaLinkStyles, ...linkAttrs };
 <tr>
   <td align="center" valign="top">
     <table role="presentation" width="610" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap003">
-
-      <!-- $ const labels = getAsArray(content, "labels");
-      <if(labels.includes("Sponsored"))>
-        $ const tag = (content.company) ? `Sponsored by ${get(content, "company.name")}` : "Sponsored Content";
-        <tr>
-          <td align="left" valign="top" style=sponsoredTagStyle>${tag}</td>
-          <td align="right" width="200">
-            <marko-core-obj-value|{ value: image }| obj=company field="primaryImage" as="object">
-              <marko-newsletter-imgix
-                src=image.src
-                alt=image.alt
-                options={ w: 360, auto: "format,compress" }
-                attrs={ border: 0, width: 180 }
-              >
-                <@link href=url target="_blank" attrs=imgLinkAttrs />
-              </marko-newsletter-imgix>
-            </marko-core-obj-value>
-          </td>
-        </tr>
-      </if> -->
+    
       <if(withSection)>
         <tr>
           <td align="left" valign="top" style=tagStyle>${get(content, "primarySection.name")}</td>
