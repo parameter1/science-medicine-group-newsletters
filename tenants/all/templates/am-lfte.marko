@@ -52,10 +52,35 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           date=date
           section-name="RADCast"
           newsletter=newsletter
-          with-image=false
+          with-image=true
           with-header=true
           with-section=true
-          limit=3
+          limit=1
+          skip=0
+        />
+
+        <!-- RADCast section -->
+        <common-content-list-block
+          date=date
+          section-name="RADCast"
+          newsletter=newsletter
+          with-image=false
+          with-header=false
+          with-section=true
+          limit=1
+          skip=1
+        />
+
+        <!-- RADCast section -->
+        <common-content-list-block
+          date=date
+          section-name="RADCast"
+          newsletter=newsletter
+          with-image=true
+          with-header=false
+          with-section=true
+          limit=1
+          skip=2
         />
 
         <!-- Ad Slot 1 -->
