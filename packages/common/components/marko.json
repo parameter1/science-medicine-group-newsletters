@@ -3,5 +3,8 @@
     "./blocks/marko.json",
     "./elements/marko.json",
     "./layouts/marko.json"
-  ]
+  ],
+  "<global-marko-web-query>": {
+    "template": "global-marko-web-query.marko"
+  }
 }

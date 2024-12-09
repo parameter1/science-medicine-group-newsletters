@@ -1,0 +1,13 @@
+<marko-web-query|data| name=input.name collapsible=input.collapsible params=input.params>
+  $ const { nodes } = data;
+  <if(nodes && nodes.length)>
+    $ data.nodes = nodes.map((node) => {
+      if (node.siteContext && node.siteContext.url) {
+        const url = node.siteContext.url.includes('?') ? `${node.siteContext.url}&"campaign_name"` : `${node.siteContext.url}?"campaign_name"`;
+        node.siteContext.url = url;
+      }
+      return node;
+    });
+  </if>
+  <${input.renderBody} ...data />
+</marko-web-query>
