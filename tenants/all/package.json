@@ -5,6 +5,12 @@
   "repository": "https://github.com/parameter1/science-medicine-group-newsletters/tree/main/tenants/all",
   "license": "MIT",
   "private": true,
+  "newsletter": {
+    "account": "science-medicine-group",
+    "tenant": "all",
+    "stack": "virgon",
+    "deploy": true
+  },
   "scripts": {
     "build": "yarn compile",
     "dev": "basecms-newsletters dev --compile-dir ../../packages --watch-dir ../../packages",

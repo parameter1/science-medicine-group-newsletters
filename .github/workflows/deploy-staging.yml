@@ -1,9 +1,9 @@
-name: Deploy newsletters (production)
+name: Deploy newsletters (staging)
 
 on:
   push:
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+    branches:
+      - staging
 
 jobs:
   version:
@@ -59,14 +59,14 @@ jobs:
         #####################################################
     with:
       ecr_registry: ${{ vars.AWS_ECR_REGISTRY }}
-      docker_image: ${{ vars.AWS_ECR_REGISTRY }}/mindful-web/newsletters:${{ matrix.newsletter.account }}-${{ matrix.newsletter.tenant }}-${{ needs.version.outputs.version }}
+      docker_image: ${{ vars.AWS_ECR_REGISTRY }}/mindful-web/newsletters-staging:${{ matrix.newsletter.account }}-${{ matrix.newsletter.tenant }}-${{ needs.version.outputs.version }}
       tenant: ${{ matrix.newsletter.tenant }}
       push: true
     secrets: inherit
 
   deploy-newsletters:
     needs: [version, build-newsletters]
-    uses: parameter1/actions/.github/workflows/newsletter-deploy-production.yml@main
+    uses: parameter1/actions/.github/workflows/newsletter-deploy-staging.yml@main
     strategy:
       matrix:
         #####################################################
@@ -78,7 +78,7 @@ jobs:
         #^# Make sure this matches the newsletter matrix! #^#
         #####################################################
     with:
-      docker_image: ${{ vars.AWS_ECR_REGISTRY }}/mindful-web/newsletters:${{ matrix.newsletter.account }}-${{ matrix.newsletter.tenant }}-${{ needs.version.outputs.version }}
+      docker_image: ${{ vars.AWS_ECR_REGISTRY }}/mindful-web/newsletters-staging:${{ matrix.newsletter.account }}-${{ matrix.newsletter.tenant }}-${{ needs.version.outputs.version }}
       infra_stack: ${{ matrix.newsletter.stack }}
       rancher_label_key: mindful-web-newsletter
       rancher_label_val: ${{ matrix.newsletter.rancher_label }}
