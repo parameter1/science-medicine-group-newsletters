@@ -25,7 +25,7 @@ $ const queryParams = {
   queryFragment,
 };
 
-<global-marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
+<marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
   <if(nodes.length)>
     <if(withHeader)>
       <common-list-header-element title=sectionName header-background-color=headerBackgroundColor />
@@ -42,4 +42,4 @@ $ const queryParams = {
       />
     </for>
   </if>
-</global-marko-web-query>
+</marko-web-query>

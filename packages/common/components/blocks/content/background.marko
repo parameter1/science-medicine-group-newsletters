@@ -24,7 +24,7 @@ $ const imgLinkStyles = {
 };
 
 <!-- Check for scheduled promotion -->
-<global-marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params={
+<marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params={
   date: date.valueOf(),
   newsletterId: newsletter.id,
   sectionName,
@@ -89,4 +89,4 @@ $ const imgLinkStyles = {
     </tr>
     <common-table-spacer-element height="36" />
   </if>
-</global-marko-web-query>
+</marko-web-query>
