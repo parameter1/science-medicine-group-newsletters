@@ -5,6 +5,9 @@ const isObj = (v) => typeof v === 'object';
 const alwaysAppend = {
   braze_int_id: '{{${braze_id}}}',
   braze_ext_id: '{{${user_id}}}',
+  utm_medium: 'email',
+  utm_source: '{{campaign.${message_api_id}}}',
+  utm_campagin: '{{${date}}}',
 };
 
 module.exports = (href, params = {}) => {
