@@ -10,7 +10,8 @@ $ const { config, req } = out.global;
 $ const newsletter = getAsObject(input, "newsletter");
 $ const { sectionName, date } = input;
 
-$ const utm_campagin = moment(Number(get(req, "query.date"))).format("YYYY-MM-DD");
+$ const reqDate = Number(get(req, "query.date"));
+$ const utm_campagin = reqDate ? moment(reqDate).format("YYYY-MM-DD") : moment().format("YYYY-MM-DD");
 $ const utm_source = get(newsletter, "name");
 
 $ const withImage = defaultValue(input.withImage, true);

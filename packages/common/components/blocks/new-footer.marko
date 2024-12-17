@@ -7,7 +7,8 @@ $ const { website, config, req } = out.global;
 $ const { newsletter } = input;
 
 $ const newsletterConfig = config.get(newsletter.alias);
-$ const utm_campagin = moment(Number(get(req, "query.date"))).format("YYYY-MM-DD");
+$ const reqDate = Number(get(req, "query.date"));
+$ const utm_campagin = reqDate ? moment(reqDate).format("YYYY-MM-DD") : moment().format("YYYY-MM-DD");
 $ const utm_source = get(newsletterConfig, "name");
 $ const tagline = get(newsletterConfig, "tagline");
 $ const subscribeLink = get(newsletterConfig, "subscribeLink");
