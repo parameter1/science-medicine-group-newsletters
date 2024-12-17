@@ -1,11 +1,19 @@
+import moment from "moment";
+
 import { get, getAsObject } from "@parameter1/base-cms-object-path";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
+
+$ const { config, req } = out.global;
+
+$ const newsletterConfig = config.get(req.path.slice(1));
+$ const utm_campagin = moment(Number(get(req, "query.date"))).format("YYYY-MM-DD");
+$ const utm_source = get(newsletterConfig, "name");
 
 $ const creativeId = get(input, "creativeId");
 $ const tenant = get(input, "tenant");
 $ const content = getAsObject(input, "content");
 
-$ const url = buildLinkUrl(get(content, "siteContext.path"));
+$ const url = buildLinkUrl(get(content, "siteContext.path"), { utm_campagin, utm_source });
 $ const label = input.label || "Paid Advertisement";
 
 $ const imgStyles = {

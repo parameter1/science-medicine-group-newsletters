@@ -1,10 +1,17 @@
+import moment from "moment";
+
 import { get, getAsObject } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import queryFragment from "@science-medicine-group/package-common/graphql/fragments/content-list";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
+$ const { config, req } = out.global;
+
 $ const newsletter = getAsObject(input, "newsletter");
 $ const { sectionName, date } = input;
+
+$ const utm_campagin = moment(Number(get(req, "query.date"))).format("YYYY-MM-DD");
+$ const utm_source = get(newsletter, "name");
 
 $ const withImage = defaultValue(input.withImage, true);
 
@@ -55,7 +62,11 @@ $ const imgLinkStyles = {
                       class="img_resize1"
                       attrs={ border: 0, width: 580, align: "center", vspace: 5, style: imgStyles }
                     >
-                      <@link href=buildLinkUrl(content.siteContext.url) target="_blank" attrs={ style: imgLinkStyles } />
+                      <@link
+                        href=buildLinkUrl(content.siteContext.url, { utm_campagin, utm_source })
+                        target="_blank"
+                        attrs={ style: imgLinkStyles }
+                      />
                     </marko-newsletter-imgix>
                   </marko-core-obj-value>
                 </td>
@@ -76,7 +87,11 @@ $ const imgLinkStyles = {
               </tr>
               <tr>
                 <td align="left" valign="top">
-                  <a href=buildLinkUrl(content.linkUrl) style="font-size: 18px;line-height: 23px;color: #055c9d;font-family: 'Roboto', Arial, sans-serif;padding: 0 15px;text-decoration: none;" target="_blank">
+                  <a
+                    href=buildLinkUrl(content.linkUrl, { utm_campagin, utm_source })
+                    style="font-size: 18px;line-height: 23px;color: #055c9d;font-family: 'Roboto', Arial, sans-serif;padding: 0 15px;text-decoration: none;"
+                    target="_blank"
+                  >
                     ${content.linkText}
                   </a>
                 </td>

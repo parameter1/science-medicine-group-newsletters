@@ -1,4 +1,13 @@
+import moment from "moment";
+
+import { get } from "@parameter1/base-cms-object-path";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
+
+$ const { config, req } = out.global;
+
+$ const newsletterConfig = config.get(req.path.slice(1));
+$ const utm_campagin = moment(Number(get(req, "query.date"))).format("YYYY-MM-DD");
+$ const utm_source = get(newsletterConfig, "name");
 
 $ const { linkText, linkUrl, linkLabel } = input;
 
@@ -13,7 +22,7 @@ $ const linkStyle = {
 
 <tr>
   <td align="left" valign="top">
-    <a style=linkStyle href=buildLinkUrl(linkUrl) linklabel=linkLabel>
+    <a style=linkStyle href=buildLinkUrl(linkUrl, { utm_campagin, utm_source }) linklabel=linkLabel>
       ${linkText}
     </a>
   </td>

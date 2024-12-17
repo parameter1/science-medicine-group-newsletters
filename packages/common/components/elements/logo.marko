@@ -1,12 +1,19 @@
+import moment from "moment";
+
+import { get } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
-$ const { website, config } = out.global;
+$ const { website, config, req } = out.global;
+
 $ const { newsletter, width } = input;
 
-$ const url = buildLinkUrl(website.get("origin"));
-$ const newsletterConfig = config.get(newsletter.alias);
 
+
+$ const newsletterConfig = config.get(req.path.slice(1));
+$ const utm_campagin = moment(Number(get(req, "query.date"))).format("YYYY-MM-DD");
+$ const utm_source = get(newsletterConfig, "name");
+$ const url = buildLinkUrl(website.get("origin"), { utm_campagin, utm_source });
 $ const logoSrc = newsletterConfig.logo.src;
 
 $ const alt = defaultValue(input.alt, newsletter.name);

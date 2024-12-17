@@ -1,12 +1,20 @@
+import moment from "moment";
+
 import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
+
+$ const { config, req } = out.global;
+
+$ const newsletterConfig = config.get(req.path.slice(1));
+$ const utm_campagin = moment(Number(get(req, "query.date"))).format("YYYY-MM-DD");
+$ const utm_source = get(newsletterConfig, "name");
 
 $ const { content, ctaLinkStyle, advertiser } = input;
 $ const company = (advertiser) ? advertiser : content.company;
 $ const creativeId = get(input, "mindfulCreativeId");
 $ const tenant = get(input, "mindfulTenant");
-$ const url = buildLinkUrl(content.siteContext.url);
+$ const url = buildLinkUrl(content.siteContext.url, { utm_campagin, utm_source });
 $ const withImage = defaultValue(input.withImage, true);
 $ const imagePosition = defaultValue(input.imagePosition, 'right');
 $ const withSection = defaultValue(input.withSection, false);
@@ -72,7 +80,7 @@ $ const ctaLinkAttrs = { style: ctaLinkStyles, ...linkAttrs };
 <tr>
   <td align="center" valign="top">
     <table role="presentation" width="610" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap003">
-    
+
       <if(withSection)>
         <tr>
           <td align="left" valign="top" style=tagStyle>${get(content, "primarySection.name")}</td>
