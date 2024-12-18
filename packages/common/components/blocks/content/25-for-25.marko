@@ -1,11 +1,20 @@
+import moment from "moment";
+
 import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
+$ const { config, req } = out.global;
+
+$ const newsletterConfig = config.get(req.path.slice(1));
+$ const reqDate = Number(get(req, "query.date"));
+$ const utm_campagin = reqDate ? moment(reqDate).format("YYYY-MM-DD") : moment().format("YYYY-MM-DD");
+$ const utm_source = get(newsletterConfig, "name");
+
 $ const { content, ctaLinkStyle, advertiser } = input;
 $ const creativeId = get(input, "mindfulCreativeId");
 $ const tenant = get(input, "mindfulTenant");
-$ const url = buildLinkUrl(content.siteContext.url);
+$ const url = buildLinkUrl(content.siteContext.url, { utm_campagin, utm_source });
 
 $ const imgLinkStyles = {
   "font-family": "'Roboto', arial, sans-serif",

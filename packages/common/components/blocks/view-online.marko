@@ -1,7 +1,15 @@
+import moment from "moment";
+
+import { get } from "@parameter1/base-cms-object-path";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
-$ const { website } = out.global;
+$ const { website, config, req } = out.global;
 
+$ const reqDate = Number(get(req, "query.date"));
+$ const utm_campagin = reqDate ? moment(reqDate).format("YYYY-MM-DD") : moment().format("YYYY-MM-DD");
+$ const newsletterConfig = config.get(req.path.slice(1));
+$ const utm_source = get(newsletterConfig, "name");
+<!-- $ console.log('logo', newsletterConfig, req.path.slice(1)) -->
 <tr>
   <td align="center" valign="top" >
     <table role="presentation" width="610" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap003">
@@ -9,7 +17,7 @@ $ const { website } = out.global;
         <common-table-spacer-element height="13" />
         <tr>
           <td align="center" valign="middle" style="font-size:15px;line-height:19px; color:#62626c;font-weight:400;">
-            <a href=buildLinkUrl(website.get("origin")) style="text-decoration: none;color: #62626c;">${website.get("name")}</a>
+            <a href=buildLinkUrl(website.get("origin"), { utm_campagin, utm_source }) style="text-decoration: none;color: #62626c;">${website.get("name")}</a>
           </td>
         </tr>
         <common-table-spacer-element height="10" />

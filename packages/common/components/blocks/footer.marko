@@ -1,22 +1,27 @@
+import moment from "moment";
+
 import { get, getAsObject, getAsArray } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
-$ const { website, config } = out.global;
+$ const { website, config, req } = out.global;
 $ const { newsletter } = input;
-
 $ const newsletterConfig = config.get(newsletter.alias);
+
+$ const reqDate = Number(get(req, "query.date"));
+$ const utm_campagin = reqDate ? moment(reqDate).format("YYYY-MM-DD") : moment().format("YYYY-MM-DD");
+$ const utm_source = get(newsletterConfig, "name");
 $ const tagline = get(newsletterConfig, "tagline");
 $ const subscribeLink = get(newsletterConfig, "subscribeLink");
 $ const publicationName = get(newsletterConfig, "publicationName");
 $ const footerWidth = defaultValue(get(newsletterConfig, "logo.footerWidth"), 130);
-$ const url = buildLinkUrl(website.get("origin"));
+$ const url = buildLinkUrl(website.get("origin"), { utm_campagin, utm_source });
 $ const logoFooterSrc = newsletterConfig.logo.footerSrc;
 $ const alt = defaultValue(input.alt, newsletter.name);
 
 $ const preferenceCenterUrl = buildLinkUrl(
   get(newsletterConfig, "preferenceCenter"),
-  { email: '{{${email_address} | url_encode }}' }
+  { email: '{{${email_address} | url_encode }}', utm_campagin, utm_source }
 );
 
 $ const standardStyle = {
@@ -157,7 +162,7 @@ $ const stealthLinkStyle = {
                   <tr>
                     <td align="left" valign="top" style=standardStyle>
                       <for|link, index| of=contactLinks>
-                        <a href=buildLinkUrl(link.href) style=standardUnderlineStyle>
+                        <a href=buildLinkUrl(link.href, { utm_campagin, utm_source }) style=standardUnderlineStyle>
                           ${link.label}
                         </a>
                         <if(index < (contactLinks.length - 1))>
