@@ -14,7 +14,7 @@ const config = {
     ...brands.labPulse,
     name: 'LabPulse-Letter From The Editor',
     logo: {
-      src: '/files/base/smg/all/image/static/lab/letter-from-editor-newsletter.jpeg',
+      src: '/files/base/smg/all/image/static/lab/Labpulse-daily.png',
       footerWidth: 200,
     },
     preferenceCenter: 'https://www.labpulse.com/user/subscribe',
@@ -50,7 +50,7 @@ const config = {
     ...brands.drb,
     name: 'Dr. Bicuspid-Letter From The Editor',
     logo: {
-      src: '/files/base/smg/all/image/static/drb/DrB_EmailHeader_LFTE_v3.jpg',
+      src: '/files/base/smg/all/image/static/drb/Dr._Biscuspid-daily.png',
       footerWidth: 200,
     },
     preferenceCenter: 'https://my.drbicuspid.com/unsubscribe/',
@@ -227,7 +227,7 @@ const config = {
     ...brands.ame,
     name: 'AuntMinnieEurope-LFTE',
     logo: {
-      src: '/files/base/smg/all/image/static/ame/AuntMinnieEurope-LFTE.png',
+      src: '/files/base/smg/all/image/static/ame/Aunt_Minnie_Europe-daily.png',
       footerWidth: 200,
     },
     preferenceCenter: 'https://my.auntminnie.com/unsubscribe-from-newsletter/',
