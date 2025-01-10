@@ -151,13 +151,6 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
             placement-id=get(nativeX, `placements.${newsletter.alias}.case-sponsor`)
           />
 
-          <common-ad-wrapper-block
-            newsletter=newsletter
-            promotion-component="advertisement-block"
-            ad-unit=emailX.getAdUnit({ name: 'case-sponsor', alias: newsletter.alias })
-            date=date
-          />
-
           <common-external-api-block
             api-url="https://my.drbicuspid.com/wp-json/mo/v1/getCase/1"
             resolved-to-nodes-converter=resolvedToNodesConverter
@@ -167,6 +160,13 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
             cta-link-style=ctaLinkStyle
           />
         </if>
+
+          <common-ad-wrapper-block
+            newsletter=newsletter
+            promotion-component="advertisement-block"
+            ad-unit=emailX.getAdUnit({ name: 'case-sponsor', alias: newsletter.alias })
+            date=date
+          />
 
         <!-- Content list block -->
         <common-content-list-block
