@@ -13,8 +13,8 @@
   },
   "scripts": {
     "build": "yarn compile",
-    "dev": "basecms-newsletters dev --compile-dir ../../packages --watch-dir ../../packages",
-    "compile": "basecms-marko-compile compile",
+    "dev": "mindful-web-newsletters dev --compile-dir ../../packages --watch-dir ../../packages",
+    "compile": "mindful-web-marko-compile compile",
     "lint": "eslint --ext .js --max-warnings 5 --config ../../.eslintrc.js --ignore-path ../../.eslintignore ./",
     "lint:fix": "yarn lint --fix",
     "test": "yarn lint && yarn compile --no-clean"
@@ -28,12 +28,12 @@
     "win32"
   ],
   "dependencies": {
-    "@parameter1/base-cms-marko-core": "^4.80.0",
-    "@parameter1/base-cms-marko-newsletters": "^4.80.0",
-    "@parameter1/base-cms-marko-newsletters-email-x": "^4.79.0",
-    "@parameter1/base-cms-marko-newsletters-native-x": "^4.80.3",
-    "@parameter1/base-cms-newsletter-cli": "^4.74.0",
-    "@parameter1/base-cms-object-path": "^4.74.0",
+    "@mindful-web/marko-core": "^1.0.0",
+    "@mindful-web/marko-newsletters": "^1.4.0",
+    "@mindful-web/marko-newsletters-email-x": "^1.4.1",
+    "@mindful-web/marko-newsletters-native-x": "^1.3.1",
+    "@mindful-web/newsletter-cli": "^1.0.2",
+    "@mindful-web/object-path": "^1.0.0",
     "@science-medicine-group/package-common": "^1.3.4",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
