@@ -19,8 +19,8 @@
     "test": "lerna run test"
   },
   "devDependencies": {
-    "@parameter1/base-cms-eslint": "^4.74.0",
-    "@parameter1/base-cms-marko-compiler": "^4.74.0",
+    "@mindful-web/eslint": "^1.0.0",
+    "@mindful-web/marko-compiler": "^1.0.0",
     "lerna": "^6.5.1"
   },
   "resolutions": {
