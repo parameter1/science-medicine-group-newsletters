@@ -11,7 +11,6 @@ $ const reqDate = Number(get(req, "query.date"));
 $ const utm_campaign = reqDate ? moment(reqDate).format("YYYY-MM-DD") : moment().format("YYYY-MM-DD");
 $ const utm_source = get(newsletterConfig, "name");
 $ const since = reqDate ? moment(reqDate).add(1, 'd').valueOf() : moment().add(1, 'd').valueOf();
-$ console.log(since);
 
 $ const { content, ctaLinkStyle, advertiser } = input;
 $ const company = (advertiser) ? advertiser : content.company;
