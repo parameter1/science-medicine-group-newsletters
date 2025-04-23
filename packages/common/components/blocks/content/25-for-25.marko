@@ -10,11 +10,12 @@ $ const newsletterConfig = config.get(req.path.slice(1));
 $ const reqDate = Number(get(req, "query.date"));
 $ const utm_campaign = reqDate ? moment(reqDate).format("YYYY-MM-DD") : moment().format("YYYY-MM-DD");
 $ const utm_source = get(newsletterConfig, "name");
+$ const since = reqDate ? moment(reqDate).add(1, 'd').valueOf() : moment().add(1, 'd').valueOf();
 
 $ const { content, ctaLinkStyle, advertiser } = input;
 $ const creativeId = get(input, "mindfulCreativeId");
 $ const tenant = get(input, "mindfulTenant");
-$ const url = buildLinkUrl(get(content, "siteContext.url"), { utm_campaign, utm_source });
+$ const url = buildLinkUrl(get(content, "siteContext.url"), { utm_campaign, utm_source, since });
 
 $ const imgLinkStyles = {
   "font-family": "'Roboto', arial, sans-serif",
