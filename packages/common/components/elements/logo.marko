@@ -12,9 +12,9 @@ $ const { newsletter, width } = input;
 
 $ const newsletterConfig = config.get(req.path.slice(1));
 $ const reqDate = Number(get(req, "query.date"));
-$ const utm_campagin = reqDate ? moment(reqDate).format("YYYY-MM-DD") : moment().format("YYYY-MM-DD");
+$ const utm_campaign = reqDate ? moment(reqDate).format("YYYY-MM-DD") : moment().format("YYYY-MM-DD");
 $ const utm_source = get(newsletterConfig, "name");
-$ const url = buildLinkUrl(website.get("origin"), { utm_campagin, utm_source });
+$ const url = buildLinkUrl(website.get("origin"), { utm_campaign, utm_source });
 $ const logoSrc = newsletterConfig.logo.src;
 
 $ const alt = defaultValue(input.alt, newsletter.name);
