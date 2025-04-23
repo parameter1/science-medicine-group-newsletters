@@ -28,12 +28,12 @@
     "win32"
   ],
   "dependencies": {
-    "@mindful-web/marko-core": "^1.0.0",
-    "@mindful-web/marko-newsletters": "^1.4.0",
-    "@mindful-web/marko-newsletters-email-x": "^1.4.1",
-    "@mindful-web/marko-newsletters-native-x": "^1.3.1",
-    "@mindful-web/newsletter-cli": "^1.0.2",
-    "@mindful-web/object-path": "^1.0.0",
+    "@mindful-web/marko-core": "^1.16.0",
+    "@mindful-web/marko-newsletters": "^1.11.9",
+    "@mindful-web/marko-newsletters-email-x": "^1.11.9",
+    "@mindful-web/marko-newsletters-native-x": "^1.11.9",
+    "@mindful-web/newsletter-cli": "^1.11.9",
+    "@mindful-web/object-path": "^1.11.9",
     "@science-medicine-group/package-common": "^2.0.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
