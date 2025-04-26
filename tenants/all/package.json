@@ -1,6 +1,6 @@
 {
   "name": "@science-medicine-group/all",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "author": "Jessica Stenzel <jessica.stenzel@parameter1.com>",
   "repository": "https://github.com/parameter1/science-medicine-group-newsletters/tree/main/tenants/all",
   "license": "MIT",
@@ -34,7 +34,7 @@
     "@mindful-web/marko-newsletters-native-x": "^1.11.9",
     "@mindful-web/newsletter-cli": "^1.11.9",
     "@mindful-web/object-path": "^1.11.9",
-    "@science-medicine-group/package-common": "^2.1.0",
+    "@science-medicine-group/package-common": "^2.1.1",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "newrelic": "^9.10.1"
