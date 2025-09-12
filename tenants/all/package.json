@@ -28,9 +28,9 @@
     "win32"
   ],
   "dependencies": {
-    "@mindful-web/marko-core": "^1.16.0",
-    "@mindful-web/marko-newsletters": "^1.11.9",
-    "@mindful-web/marko-newsletters-email-x": "^1.11.9",
+    "@mindful-web/marko-core": "^1.28.0",
+    "@mindful-web/marko-newsletters": "^1.28.0",
+    "@mindful-web/marko-newsletters-email-x": "^1.20.4",
     "@mindful-web/marko-newsletters-native-x": "^1.11.9",
     "@mindful-web/newsletter-cli": "^1.11.9",
     "@mindful-web/object-path": "^1.11.9",
