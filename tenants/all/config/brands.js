@@ -29,6 +29,7 @@ module.exports = {
       links: [
         { provider: 'facebook', href: 'https://www.facebook.com/auntminnie.radiology', target: '_blank' },
         { provider: 'twitter', href: 'https://twitter.com/AuntMinnie', target: '_blank' },
+        { provider: 'instagram', href: 'https://www.instagram.com/auntminnienews', target: '_blank' },
       ],
     },
   },
@@ -40,6 +41,7 @@ module.exports = {
         { provider: 'facebook', href: 'https://www.facebook.com/auntminnieeurope', target: '_blank' },
         { provider: 'twitter', href: 'https://www.x.com/auntminnieeuro', target: '_blank' },
         { provider: 'linkedin', href: 'https://www.linkedin.com/company/auntminnieeurope.com/', target: '_blank' },
+        { provider: 'instagram', href: 'https://www.instagram.com/auntminnieeurope', target: '_blank' },
       ],
     },
   },
