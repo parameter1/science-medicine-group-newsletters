@@ -183,6 +183,17 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           date=date
         />
 
+        <!-- Content list block -->
+        <common-content-list-block
+          date=date
+          section-name="Podcast"
+          newsletter=newsletter
+          with-image=false
+          with-header=true
+          skip=0
+          limit=5
+        />
+
         <if(caseBlock === true)>
           <tr>
             <td align="center" valign="top">
