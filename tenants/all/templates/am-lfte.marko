@@ -188,10 +188,19 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           date=date
           section-name="Podcast"
           newsletter=newsletter
-          with-image=false
+          with-image=true
           with-header=true
           skip=0
-          limit=5
+          limit=3
+        />
+
+        <common-content-list-block
+          date=date
+          section-name="Podcast"
+          newsletter=newsletter
+          with-image=false
+          skip=2
+          limit=2
         />
 
         <if(caseBlock === true)>
