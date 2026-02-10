@@ -282,6 +282,14 @@ config
       width: 300,
       height: 250,
     },
+  ])
+  .setAdUnits('drb-cds', [
+    {
+      name: 'ad-slot-1',
+      id: '6989e7e50adfec38fe6e12f9',
+      width: 300,
+      height: 250,
+    },
   ]);
 
 module.exports = config;

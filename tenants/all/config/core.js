@@ -253,6 +253,15 @@ const config = {
     preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
     caseBlock: true,
   },
+  'drb-cds': {
+    ...brands.drb,
+    name: 'DrB-CDS Midwinter',
+    logo: {
+      src: '/files/base/smg/all/image/static/drb/CDS_DRB.png',
+      footerWidth: 300,
+    },
+    preferenceCenter: 'https://my.drbicuspid.com/unsubscribe/',
+  },
 };
 
 module.exports = config;
