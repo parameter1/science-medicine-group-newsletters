@@ -480,10 +480,10 @@
     apollo-link-http "^1.5.17"
     node-fetch "^2.6.9"
 
-"@mindful-web/dayjs@^1.16.0":
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/dayjs/-/dayjs-1.16.0.tgz#279000a4f31d7a8d0cec466e58a921838621bbd6"
-  integrity sha512-O3tbMMp0HuBKYPi0E+XBB9pmcWU0Qnp8IIz7hcPkoxSlRVVU/r1T/aKElPP8hEgyoF7xqZYOi61gm7dnUE92Cw==
+"@mindful-web/dayjs@^1.49.2":
+  version "1.49.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/dayjs/-/dayjs-1.49.2.tgz#b09165d8074528b913bfe4e61decb20de9f54443"
+  integrity sha512-aKGyYvuiC3ISpMal8iWTSPQasvkJNE1RLDfhhUa9T/k4YeG8ud1fToEczKb0cI7t67gU/2aSnVChm3QSZRYPgg==
   dependencies:
     dayjs "^1.11.7"
 
@@ -552,12 +552,12 @@
     marko "~4.20.0"
     minimist "^1.2.8"
 
-"@mindful-web/marko-core@^1.28.0":
-  version "1.28.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-core/-/marko-core-1.28.0.tgz#654ccbf292f04b5e99dd879a2b8bbaa3ffb25d02"
-  integrity sha512-vBbqjEH+ul+eADoNmRGeICQ0l+EFcFrXeOvqi3Tk+xl+CBPPOl+rsv7Wpimvu4wLY3b2vO7WYPTxWdbDaduqWg==
+"@mindful-web/marko-core@^1.49.2":
+  version "1.49.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-core/-/marko-core-1.49.2.tgz#ae82367c21888b20d458b67f8fe8537d24946c5f"
+  integrity sha512-XM20qQ/dTLhHq0RPxEJvVNn6LQeviWf5/lBPVHPygys7BZAo8Hjhjak7zbRkgo1aoHOkltMVrXayQZ+bLlMpXQ==
   dependencies:
-    "@mindful-web/dayjs" "^1.16.0"
+    "@mindful-web/dayjs" "^1.49.2"
     "@mindful-web/marko-express" "^1.0.0"
     "@mindful-web/object-path" "^1.11.9"
     "@mindful-web/utils" "^1.11.9"
@@ -571,20 +571,20 @@
     marko "~4.20.0"
     pretty "^2.0.0"
 
-"@mindful-web/marko-newsletters-email-x@^1.20.4":
-  version "1.20.4"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-newsletters-email-x/-/marko-newsletters-email-x-1.20.4.tgz#56a524ebc0fb63282ae3340c7ddb8b128d9fff7c"
-  integrity sha512-UDF6MmUDUGZKVJpC5C8jHsugbh3AUeb6xRX46zZPzH2PZQQ9uTF+RhYs4GKX8lIHp1ennu/VvOFLZPbo/Yui6g==
+"@mindful-web/marko-newsletters-email-x@^1.49.1":
+  version "1.49.1"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-newsletters-email-x/-/marko-newsletters-email-x-1.49.1.tgz#effa56936ff8e09c4facd4da993a77bcbf0d909f"
+  integrity sha512-ahibztdiXjGiJtrhUoZxWBAzJymWfZk70oQx48X8mg5GxmoVoWr6ZqXfzOgrZmRp2wbvtyt5wL5OoIGpTyrigw==
   dependencies:
     "@mindful-web/object-path" "^1.11.9"
     "@mindful-web/utils" "^1.11.9"
     moment "^2.29.1"
     node-fetch "^2.6.9"
 
-"@mindful-web/marko-newsletters-native-x@^1.11.9":
-  version "1.11.9"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-newsletters-native-x/-/marko-newsletters-native-x-1.11.9.tgz#44e688b13e1892aff32cbd3ff67d22d9be3a002c"
-  integrity sha512-CGM/H7inB7sjJkLgCpgk7Jld3KADtvfUMYVZ5B+0FOvxAmqlxkt3gaTdmE5VC80psB+C0JGiVIY80wbiV0N5pQ==
+"@mindful-web/marko-newsletters-native-x@^1.45.1":
+  version "1.45.1"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-newsletters-native-x/-/marko-newsletters-native-x-1.45.1.tgz#98217b4c95ed59705ecc16b2739f0177762a707f"
+  integrity sha512-heYIUJiKGKLrRmMKQCTKjjGeTKZhj+UTYoNsye2pTUyW6uvXcSGdeJdqX6aDBIJ+RtFqRhLc3p0yyscerJ23nQ==
   dependencies:
     "@mindful-web/object-path" "^1.11.9"
     "@mindful-web/utils" "^1.11.9"
@@ -642,10 +642,10 @@
     graphql "^14.7.0"
     graphql-tag "^2.12.6"
 
-"@mindful-web/marko-web-native-x@^1.28.0":
-  version "1.28.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-native-x/-/marko-web-native-x-1.28.0.tgz#9a2d0e45c56bfa000277015c125f233cebf55d66"
-  integrity sha512-snFcRDp3N059YPj+q8mq5wSBzM/hoC15Uy/1ZDQicKxhQIrMD4MgfE2XS3GuaHVpsqdtOU8ym9jwSvd4+ZLVJQ==
+"@mindful-web/marko-web-native-x@^1.44.2":
+  version "1.44.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-native-x/-/marko-web-native-x-1.44.2.tgz#ab50ee4a214ec2b3b669bbbbbffc25dc720b96d7"
+  integrity sha512-6qGRuXD93HYswQ8Np3TZl7BtZpGqa6ca/B6tV5WadUXEB8Zty8HBixmI5LR76CDLn8Ny+/SLz1+/Wku0fBw66A==
   dependencies:
     "@mindful-web/marko-web-deferred-script-loader" "^1.11.9"
     "@mindful-web/marko-web-gtm" "^1.11.9"
