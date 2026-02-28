@@ -75,7 +75,7 @@ $ const presentationLinkAttrs = { style: presentationLinkStyles, ...linkAttrs };
                       options={ w: 300, h: 250, fit: "crop", auto: "format,compress" }
                       attrs={ border: 0, width: 300, style: imgStyles }
                     >
-                      <@link href=url target="_blank" attrs={ style: imgLinkStyles } />
+                      <@link href=url target="_blank" attrs=imgLinkAttrs />
                     </marko-newsletter-imgix>
                   </marko-core-obj-value>
                 </td>
@@ -102,6 +102,7 @@ $ const presentationLinkAttrs = { style: presentationLinkStyles, ...linkAttrs };
                                 </marko-core-obj-text>
                               </td>
                               <td>
+                                $ const att = { ...linkAttrs, style: { "font-size": "14px", "line-height": 0 }};
                                 <marko-core-obj-value|{ value: image }| obj=content.company field="primaryImage" as="object">
                                   <marko-newsletter-imgix
                                     src=image.src
@@ -112,12 +113,7 @@ $ const presentationLinkAttrs = { style: presentationLinkStyles, ...linkAttrs };
                                     <@link
                                       href=url
                                       target="_blank"
-                                      attrs={
-                                        style: {
-                                          "font-size": "14px",
-                                          "line-height": 0,
-                                        }
-                                      }
+                                      attrs=att
                                     />
                                   </marko-newsletter-imgix>
                                 </marko-core-obj-value>
