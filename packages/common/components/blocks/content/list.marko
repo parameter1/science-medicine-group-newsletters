@@ -28,7 +28,8 @@ $ const queryParams = {
 <marko-web-query|{ nodes }| name="newsletter-scheduled-content" collapsible=false params=queryParams>
   <if(nodes.length)>
     <if(withHeader)>
-      <common-list-header-element title=sectionName header-background-color=headerBackgroundColor />
+      $ const title = sectionName === 'RADCast' ? 'ShowCast' : sectionName;
+      <common-list-header-element title=title header-background-color=headerBackgroundColor />
     </if>
     <for|content| of=nodes>
       <common-content-list-item-block
