@@ -47,60 +47,6 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           limit=1
         />
 
-        <!-- RADCast section -->
-        <common-content-list-block
-          date=date
-          section-name="RADCast"
-          newsletter=newsletter
-          with-image=true
-          with-header=true
-          with-section=true
-          limit=1
-          skip=0
-        />
-
-        <!-- RADCast section -->
-        <common-content-list-block
-          date=date
-          section-name="RADCast"
-          newsletter=newsletter
-          with-image=false
-          with-header=false
-          with-section=true
-          limit=1
-          skip=1
-        />
-
-        <!-- RADCast section -->
-        <common-content-list-block
-          date=date
-          section-name="RADCast"
-          newsletter=newsletter
-          with-image=true
-          with-header=false
-          with-section=true
-          limit=1
-          skip=2
-        />
-
-        <!-- Ad Slot 1 -->
-        <common-ad-wrapper-block
-          newsletter=newsletter
-          ad-unit=emailX.getAdUnit({ name: 'ad-slot-1', alias: newsletter.alias })
-          date=date
-        />
-
-        <!-- RADCast section -->
-        <common-content-list-block
-          date=date
-          section-name="RADCast"
-          newsletter=newsletter
-          with-image=false
-          with-section=true
-          skip=3
-          limit=17
-        />
-
         <common-content-list-block
           date=date
           section-name="Top Stories"
@@ -129,6 +75,60 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           newsletter=newsletter
           with-image=true
           image-position="right"
+          with-section=true
+          limit=1
+          skip=2
+        />
+
+        <!-- Ad Slot 1 -->
+        <common-ad-wrapper-block
+          newsletter=newsletter
+          ad-unit=emailX.getAdUnit({ name: 'ad-slot-1', alias: newsletter.alias })
+          date=date
+        />
+
+        <!-- Content list block -->
+        <common-content-list-block
+          date=date
+          section-name="Top Stories"
+          newsletter=newsletter
+          with-image=false
+          with-section=true
+          skip=3
+          limit=11
+        />
+
+        <!-- RADCast section -->
+        <common-content-list-block
+          date=date
+          section-name="RADCast"
+          newsletter=newsletter
+          with-image=true
+          with-header=true
+          with-section=true
+          limit=1
+          skip=0
+        />
+
+        <!-- RADCast section -->
+        <common-content-list-block
+          date=date
+          section-name="RADCast"
+          newsletter=newsletter
+          with-image=false
+          with-header=false
+          with-section=true
+          limit=1
+          skip=1
+        />
+
+        <!-- RADCast section -->
+        <common-content-list-block
+          date=date
+          section-name="RADCast"
+          newsletter=newsletter
+          with-image=true
+          with-header=false
           with-section=true
           limit=1
           skip=2
@@ -143,15 +143,15 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           date=date
         />
 
-        <!-- Content list block -->
+        <!-- RADCast section -->
         <common-content-list-block
           date=date
-          section-name="Top Stories"
+          section-name="RADCast"
           newsletter=newsletter
           with-image=false
           with-section=true
           skip=3
-          limit=11
+          limit=17
         />
 
         <!-- Content list block -->
