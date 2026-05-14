@@ -6,6 +6,7 @@ import PromotionNativeBlock from "./promotion-native";
 import PromotionSponsoredBlock from "./promotion-sponsored";
 import PromotionCaseNativeBlock from "./promotion-case-native";
 import Promotion25For25Block from "./promotion-25-for-25";
+import PromotionCompanyBlock from "./promotion-company";
 
 $ const { config } = out.global;
 $ const nativeX = config.getAsObject("nativeX");
@@ -20,6 +21,7 @@ $ const promotionComponents = {
   "sponsored-block": PromotionSponsoredBlock,
   "case-native-block": PromotionCaseNativeBlock,
   "25-for-25-block": Promotion25For25Block,
+  "company-block": PromotionCompanyBlock,
 };
 $ const PromotionComponent = promotionComponents[defaultValue(input.promotionComponent, "advertisement-block")];
 
