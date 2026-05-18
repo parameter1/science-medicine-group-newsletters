@@ -18,6 +18,8 @@ module.exports = {
       'slot-1': '638619dad6ced5000110a551',
       'slot-2': '66daff52feb239558f0e8f61',
       'case-sponsor': '643d7f61b91bf50001eff980',
+      sponsored: '6a05d962ce400a9ed3923e61',
+      'sponsored-2': '6a06171542f316a9374e4791',
     },
     'drb-community-insider': {
       community: '6406acf593fb8e0001c3ac7c',

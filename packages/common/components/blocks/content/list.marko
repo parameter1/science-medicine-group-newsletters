@@ -1,9 +1,10 @@
-import { get, getAsArray } from "@mindful-web/object-path";
+import { get, getAsArray, getAsObject } from "@mindful-web/object-path";
 import defaultValue from "@mindful-web/marko-core/utils/default-value";
 import queryFragment from "@science-medicine-group/package-common/graphql/fragments/content-list";
 
 $ const { config } = out.global;
 
+$ const nativeX = config.getAsObject("nativeX");
 $ const { headerBackgroundColor, sectionName, date, newsletter } = input;
 
 $ const withImage = defaultValue(input.withImage, true);
@@ -11,6 +12,8 @@ $ const imagePosition = defaultValue(input.imagePosition, 'right');
 $ const withHeader = defaultValue(input.withHeader, false);
 $ const withSection = defaultValue(input.withSection, false);
 $ const continueReading = defaultValue(input.continueReading, false);
+$ const withCompany = defaultValue(input.withCompany, false);
+$ const withCompanySecond = defaultValue(input.withCompanySecond, false);
 
 $ const newsletterConfig = config.get(newsletter.alias);
 
@@ -30,6 +33,22 @@ $ const queryParams = {
     <if(withHeader)>
       $ const title = sectionName === 'RADCast' ? 'ShowCast' : sectionName;
       <common-list-header-element title=title header-background-color=headerBackgroundColor />
+    </if>
+    <if(withCompany)>
+      <common-ad-wrapper-block
+        date=date
+        newsletter=newsletter
+        promotion-component="company-block"
+        placement-id=get(nativeX, `placements.${newsletter.alias}.sponsored`)
+      />
+    </if>
+    <if(withCompanySecond)>
+      <common-ad-wrapper-block
+        date=date
+        newsletter=newsletter
+        promotion-component="company-block"
+        placement-id=get(nativeX, `placements.${newsletter.alias}.sponsored-2`)
+      />
     </if>
     <for|content| of=nodes>
       <common-content-list-item-block

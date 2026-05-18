@@ -19,5 +19,8 @@
   },
   "<common-ad-promotion-25-for-25-block>": {
     "template": "./promotion-25-for-25.marko"
+  },
+  "<common-ad-promotion-company-block>": {
+    "template": "./promotion-company.marko"
   }
 }
