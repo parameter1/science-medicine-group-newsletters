@@ -153,7 +153,7 @@ const config = {
     ...brands.am,
     name: 'AuntMinnie-Radcast',
     logo: {
-      src: '/files/base/smg/all/image/static/am/AM__RADCast.png',
+      src: '/files/base/smg/all/image/static/am/Showcast_AM_v1.png',
       footerWidth: 200,
     },
     preferenceCenter: 'https://www.auntminnie.com/user/subscribe',
@@ -238,7 +238,7 @@ const config = {
     ...brands.ame,
     name: 'AuntMinnieEurope-Radcast',
     logo: {
-      src: '/files/base/smg/all/image/static/ame/AME_RADCast.jpeg',
+      src: '/files/base/smg/all/image/static/ame/ShowCast_AME_V1.png',
       footerWidth: 200,
     },
     preferenceCenter: 'https://www.auntminnieeurope.com/user/subscribe',
@@ -261,6 +261,15 @@ const config = {
       footerWidth: 300,
     },
     preferenceCenter: 'https://my.drbicuspid.com/unsubscribe/',
+  },
+  'drb-radcast': {
+    ...brands.drb,
+    name: 'DrB-Radcast',
+    logo: {
+      src: '/files/base/smg/all/image/static/drb/Showcast_DrB_V1.png',
+      footerWidth: 200,
+    },
+    preferenceCenter: 'https://www.drbicuspid.com/user/subscribe',
   },
 };
 
