@@ -82,5 +82,9 @@ module.exports = {
       'case-sponsor': '6674430f49e2ea000100c0f2',
       sponsored: '66744322f0716b0001d593cf',
     },
+    'drb-radcast': {
+      'slot-1': '6a2b0dd3c8c6e5db066be4d8',
+      sponsored: '6a2b0a4734a55f08623ff83e',
+    },
   },
 };

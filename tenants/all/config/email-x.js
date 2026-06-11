@@ -290,6 +290,14 @@ config
       width: 300,
       height: 250,
     },
+  ])
+  .setAdUnits('drb-radcast', [
+    {
+      name: 'ad-slot-1',
+      id: '6a2b0a08e35174078cfe26a5',
+      width: 300,
+      height: 250,
+    },
   ]);
 
 module.exports = config;
