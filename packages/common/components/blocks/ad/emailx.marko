@@ -1,10 +1,12 @@
 import { getAsObject } from "@mindful-web/object-path";
+import { getTokens } from "@science-medicine-group/package-common/utils/esp-tokens";
 
 $ const adUnit = getAsObject(input, "adUnit");
+$ const espTokens = getTokens(out.global.emailProvider);
 
 <marko-newsletters-email-x-data|{ response }| decoded-params=['email', 'send']>
   <@ad-unit ...adUnit />
-  <@params date=input.date email="{{\${braze_id}}}" />
+  <@params date=input.date email=espTokens.emailxEmail />
   <if(response)>
     <tr>
       <td align="center" valign="top">
