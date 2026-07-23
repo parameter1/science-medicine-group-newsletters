@@ -2,8 +2,10 @@ import moment from "moment";
 import { get, getAsObject, getAsArray } from "@mindful-web/object-path";
 import defaultValue from "@mindful-web/marko-core/utils/default-value";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
+import { getTokens } from '@science-medicine-group/package-common/utils/esp-tokens';
 
-$ const { website, config, req } = out.global;
+$ const { website, config, req, emailProvider } = out.global;
+$ const espTokens = getTokens(emailProvider);
 $ const { newsletter } = input;
 
 $ const newsletterConfig = config.get(newsletter.alias);
@@ -16,22 +18,23 @@ $ const subtitle = get(newsletterConfig, "subtitle");
 $ const subID = get(newsletterConfig, "subID");
 $ const publicationName = get(newsletterConfig, "publicationName");
 $ const footerWidth = defaultValue(get(newsletterConfig, "logo.footerWidth"), 130);
-$ const url = buildLinkUrl(website.get("origin"), { utm_campaign, utm_source });
+$ const url = buildLinkUrl(website.get("origin"), { utm_campaign, utm_source }, emailProvider);
 $ const logoFooterSrc = newsletterConfig.logo.footerSrc;
 $ const alt = defaultValue(input.alt, newsletter.name);
 
-$ const preferenceCenterUrl = buildLinkUrl(
+$ const preferenceCenterUrl = espTokens.unsubscribeUrl || buildLinkUrl(
   get(newsletterConfig, "preferenceCenter"),
   {
-    email: '{{${email_address} | url_encode }}',
-    id: '{{${user_id}}}',
+    email: espTokens.email,
+    id: espTokens.userId,
     subtitle,
     subID,
     subFlag: '0',
     mode: 'edit',
     utm_campaign,
     utm_source,
-  }
+  },
+  emailProvider
 );
 
 $ const standardStyle = {
@@ -157,7 +160,7 @@ $ const stealthLinkStyle = {
                   <tr>
                     <td align="left" valign="top" style=standardStyle>
                       <for|link, index| of=contactLinks>
-                        <a href=buildLinkUrl(link.href, { utm_campaign, utm_source }) style=standardUnderlineStyle>
+                        <a href=buildLinkUrl(link.href, { utm_campaign, utm_source }, emailProvider) style=standardUnderlineStyle>
                           ${link.label}
                         </a>
                         <if(index < (contactLinks.length - 1))>

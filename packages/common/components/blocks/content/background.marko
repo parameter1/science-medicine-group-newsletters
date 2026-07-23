@@ -5,7 +5,7 @@ import defaultValue from "@mindful-web/marko-core/utils/default-value";
 import queryFragment from "@science-medicine-group/package-common/graphql/fragments/content-list";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
-$ const { config, req } = out.global;
+$ const { config, req, emailProvider } = out.global;
 
 $ const newsletter = getAsObject(input, "newsletter");
 $ const { sectionName, date } = input;
@@ -64,7 +64,7 @@ $ const imgLinkStyles = {
                       attrs={ border: 0, width: 580, align: "center", vspace: 5, style: imgStyles }
                     >
                       <@link
-                        href=buildLinkUrl(content.siteContext.url, { utm_campaign, utm_source })
+                        href=buildLinkUrl(content.siteContext.url, { utm_campaign, utm_source }, emailProvider)
                         target="_blank"
                         attrs={ style: imgLinkStyles }
                       />
@@ -89,7 +89,7 @@ $ const imgLinkStyles = {
               <tr>
                 <td align="left" valign="top">
                   <a
-                    href=buildLinkUrl(content.linkUrl, { utm_campaign, utm_source })
+                    href=buildLinkUrl(content.linkUrl, { utm_campaign, utm_source }, emailProvider)
                     style="font-size: 18px;line-height: 23px;color: #055c9d;font-family: 'Roboto', Arial, sans-serif;padding: 0 15px;text-decoration: none;"
                     target="_blank"
                   >
