@@ -1,19 +1,17 @@
-/* eslint-disable no-template-curly-in-string */
+const { getTokens, isMailchimp } = require('./esp-tokens');
+
 const liquidVar = /{{.*?}}/;
 const isObj = (v) => typeof v === 'object';
 
-const alwaysAppend = {
-  braze_int_id: '{{${braze_id}}}',
-  braze_ext_id: '{{${user_id}}}',
-  utm_medium: 'email',
-};
-
-module.exports = (href, params = {}) => {
+module.exports = (href, params, provider) => {
   const url = new URL(href);
-  const toAppend = { ...(isObj(params) && { ...params }), ...alwaysAppend };
+  const toAppend = { ...(isObj(params) && { ...params }), ...getTokens(provider).linkParams };
 
   // Set append the values to the URL
   Object.entries(toAppend).forEach(([key, value]) => { url.searchParams.set(key, value); });
+
+  // Un-escape merge-tag pipes so Mailchimp can replace them.
+  if (isMailchimp(provider)) return `${url}`.replace(/%7C/ig, '|');
 
   let encoded = `${url}`;
   // Decode any liquid tags to ensure successful replacement.
