@@ -4,7 +4,7 @@ import { get, getAsArray } from "@mindful-web/object-path";
 import defaultValue from "@mindful-web/marko-core/utils/default-value";
 import buildLinkUrl from '@science-medicine-group/package-common/utils/build-link-url';
 
-$ const { config, req } = out.global;
+$ const { config, req, emailProvider } = out.global;
 
 $ const newsletterConfig = config.get(req.path.slice(1));
 $ const reqDate = Number(get(req, "query.date"));
@@ -13,7 +13,7 @@ $ const utm_source = get(newsletterConfig, "name");
 $ const since = reqDate ? moment(reqDate).add(1, 'd').valueOf() : moment().add(1, 'd').valueOf();
 
 $ const { content, ctaLinkStyle } = input;
-$ const url = buildLinkUrl(get(content, "siteContext.url"), { utm_campaign, utm_source, since });
+$ const url = buildLinkUrl(get(content, "siteContext.url"), { utm_campaign, utm_source, since }, emailProvider);
 $ const withImage = defaultValue(input.withImage, true);
 $ const imagePosition = defaultValue(input.imagePosition, 'right');
 
