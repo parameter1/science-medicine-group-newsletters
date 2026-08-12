@@ -25,6 +25,7 @@ const TOKENS = {
     userId: '*|UNIQID|*',
     emailxEmail: '*|UNIQID|*',
     linkParams: {
+      mc_campaign: '*|CAMPAIGN_UID|*',
       mc_id: '*|UNIQID|*',
       utm_medium: 'email',
     },
