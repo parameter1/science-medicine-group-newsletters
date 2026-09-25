@@ -154,6 +154,13 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           limit=17
         />
 
+        <!-- Showcast Ad Slot -->
+        <common-ad-wrapper-block
+          newsletter=newsletter
+          ad-unit=emailX.getAdUnit({ name: 'showcast', alias: newsletter.alias })
+          date=date
+        />
+
         <!-- Content list block -->
         <common-content-list-block
           date=date

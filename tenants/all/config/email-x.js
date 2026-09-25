@@ -150,6 +150,12 @@ config
       width: 300,
       height: 250,
     },
+    {
+      name: 'showcast',
+      id: '654917e72e4a2921881e5ee2',
+      width: 300,
+      height: 250,
+    },
   ])
   .setAdUnits('am-community-insider', [
     {
