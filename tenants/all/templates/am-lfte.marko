@@ -134,15 +134,6 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           skip=2
         />
 
-        <!-- Ad Slot 2 -->
-        <common-ad-wrapper-block
-          newsletter=newsletter
-          promotion-component="advertisement-block"
-          ad-unit=emailX.getAdUnit({ name: 'ad-slot-2', alias: newsletter.alias })
-          placement-id=get(nativeX, `placements.${newsletter.alias}.slot-1`)
-          date=date
-        />
-
         <!-- Showcast section -->
         <common-content-list-block
           date=date
@@ -159,6 +150,62 @@ $ const resolvedToNodesConverter = ({ resolved }) => (resolved.map((node) => ({
           newsletter=newsletter
           ad-unit=emailX.getAdUnit({ name: 'showcast', alias: newsletter.alias })
           date=date
+        />
+
+        <!-- RADCast section -->
+        <common-content-list-block
+          date=date
+          section-name="RADCast"
+          newsletter=newsletter
+          with-image=true
+          with-header=true
+          with-section=true
+          limit=1
+          skip=0
+        />
+
+        <!-- RADCast section -->
+        <common-content-list-block
+          date=date
+          section-name="RADCast"
+          newsletter=newsletter
+          with-image=false
+          with-header=false
+          with-section=true
+          limit=1
+          skip=1
+        />
+
+        <!-- RADCast section -->
+        <common-content-list-block
+          date=date
+          section-name="RADCast"
+          newsletter=newsletter
+          with-image=true
+          with-header=false
+          with-section=true
+          limit=1
+          skip=2
+        />
+
+        <!-- Ad Slot 2 -->
+        <common-ad-wrapper-block
+          newsletter=newsletter
+          promotion-component="advertisement-block"
+          ad-unit=emailX.getAdUnit({ name: 'ad-slot-2', alias: newsletter.alias })
+          placement-id=get(nativeX, `placements.${newsletter.alias}.slot-1`)
+          date=date
+        />
+
+        <!-- RADCast section -->
+        <common-content-list-block
+          date=date
+          section-name="RADCast"
+          newsletter=newsletter
+          with-image=false
+          with-section=true
+          skip=3
+          limit=17
         />
 
         <!-- Content list block -->
